@@ -30,3 +30,10 @@ body {
   height: 10%;
   width: 10%;
 }
+
+.grid div.dorothy {
+  background-image: url('https://img2.pngio.com/dorothy-dorothy-wizard-of-oz-transparent-png-365x679-free-dorothy-and-the-wizard-of-oz-png-820_759.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
