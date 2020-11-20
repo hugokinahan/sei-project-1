@@ -18,6 +18,9 @@ function init() {
   const homePositionThree = 6
   const homePositionFour = 8
 
+  const witchClass = 'witch'
+  let witchPositionOne = 59
+
   // * Make a grid
 
   function createGrid(startingPosition) {
@@ -84,10 +87,41 @@ function init() {
   //   cells[position].classList.remove(homeClass)
   // }
 
-  // ! DOROTHY LANDING ON HOME 
+  // // ! DOROTHY LANDING ON HOME 
   
-  const dorothyIsHome = dorothyPosition === homePositionOne
-  console.log(dorothyIsHome)
+  // const dorothyIsHome = true
+  
+  // function getDorothyHome() {
+  //   if (dorothyClass === homePositionOne) {
+  //     return dorothyIsHome
+  //   } if (dorothyClass === homePositionTwo) {
+  //     return dorothyIsHome
+  //   } if (dorothyClass === homePositionThree) {
+  //     return dorothyIsHome
+  //   } if (dorothyClass === homePositionFour) {
+  //     return dorothyIsHome
+  //   } 
+  //   console.log(dorothyIsHome)
+  // }
+
+  // ! WITCHES CROSSING
+
+  // * Add Witche to grid
+  function addWitch(position) {
+    cells[position].classList.add(witchClass)
+  }
+  
+  // // * Remove Witch from the grid
+  //   function removeDorothy(position) {
+  //     cells[position].classList.remove(dorothyClass)
+  //   }
+  
+  // // * Move Witch 
+  //   function handleKeyUp(event) {
+  //     removeDorothy(dorothyPosition)
+    
+  //     const horizontalPosition = dorothyPosition % width
+  //     const verticalPosition = Math.floor(dorothyPosition / width)
 
   // ! EVENT LISTENERS
 
@@ -99,6 +133,10 @@ function init() {
   addHome(homePositionTwo)
   addHome(homePositionThree)
   addHome(homePositionFour)
+
+  addWitch(witchPositionOne)
+
+  // getDorothyHome(dorothyIsHome)
 
 }
 

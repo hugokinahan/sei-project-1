@@ -48,6 +48,14 @@ body {
   background-position: center;
 }
 
+.grid div.witch {
+  background-image: url('../assets/wicked-witch.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-position: center;
+}
+
 /* STARTING ROAD - CAN I GROUP THESE TOGETHER? */
 
 body > div > div > div:nth-child(91) {
