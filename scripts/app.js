@@ -2,6 +2,7 @@ function init() {
 
   // ! VARIABLES
   // * Elements 
+
   const grid = document.querySelector('.grid')
   
   const width = 10
@@ -18,6 +19,7 @@ function init() {
   const homePositionFour = 8
 
   // * Make a grid
+
   function createGrid(startingPosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
@@ -82,6 +84,10 @@ function init() {
   //   cells[position].classList.remove(homeClass)
   // }
 
+  // ! DOROTHY LANDING ON HOME 
+  
+  const dorothyIsHome = dorothyPosition === homePositionOne
+  console.log(dorothyIsHome)
 
   // ! EVENT LISTENERS
 
