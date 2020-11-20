@@ -38,3 +38,11 @@ body {
   cursor: pointer;
   background-position: center;
 }
+
+.grid div.home {
+  background-image: url('../assets/dorothy-home.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-position: center;
+}
