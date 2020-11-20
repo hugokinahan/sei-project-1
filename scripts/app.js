@@ -1,7 +1,6 @@
 function init() {
 
   // ! VARIABLES
-  // * Elements 
 
   const grid = document.querySelector('.grid')
   
@@ -20,6 +19,12 @@ function init() {
 
   const witchClass = 'witch'
   let witchPositionOne = 59
+  let witchPositionTwo = 60
+  let witchPositionThree = 79
+  let witchPositionFour = 80
+
+
+  let timerId = null
 
   // * Make a grid
 
@@ -63,6 +68,7 @@ function init() {
       case 38: //arrow up
       case 87: //w key
         if (verticalPosition > 0) dorothyPosition -= width
+        getDorothyHome(dorothyIsHome)
         break
       case 40: //arrow down
       case 83: //s key
@@ -87,41 +93,86 @@ function init() {
   //   cells[position].classList.remove(homeClass)
   // }
 
-  // // ! DOROTHY LANDING ON HOME 
+  // ! DOROTHY LANDING ON HOME 
   
-  // const dorothyIsHome = true
+  const dorothyIsHome = true
   
-  // function getDorothyHome() {
-  //   if (dorothyClass === homePositionOne) {
-  //     return dorothyIsHome
-  //   } if (dorothyClass === homePositionTwo) {
-  //     return dorothyIsHome
-  //   } if (dorothyClass === homePositionThree) {
-  //     return dorothyIsHome
-  //   } if (dorothyClass === homePositionFour) {
-  //     return dorothyIsHome
-  //   } 
-  //   console.log(dorothyIsHome)
-  // }
+  function getDorothyHome() {
+    if (dorothyPosition === homePositionOne) {
+      console.log(dorothyIsHome)
+      return dorothyIsHome
+    } if (dorothyPosition === homePositionTwo) {
+      console.log(dorothyIsHome)
+      return dorothyIsHome
+    } if (dorothyPosition === homePositionThree) {
+      console.log(dorothyIsHome)
+      return dorothyIsHome
+    } if (dorothyPosition === homePositionFour) {
+      console.log(dorothyIsHome)
+      return dorothyIsHome
+    } 
+  }
+
+  function hasDorothyAndHome(element) {
+    return element.classList.contains(dorothyClass)
+  }
 
   // ! WITCHES CROSSING
 
-  // * Add Witche to grid
+  // * Add Witch to grid
   function addWitch(position) {
     cells[position].classList.add(witchClass)
   }
-  
-  // // * Remove Witch from the grid
-  //   function removeDorothy(position) {
-  //     cells[position].classList.remove(dorothyClass)
-  //   }
-  
-  // // * Move Witch 
-  //   function handleKeyUp(event) {
-  //     removeDorothy(dorothyPosition)
-    
-  //     const horizontalPosition = dorothyPosition % width
-  //     const verticalPosition = Math.floor(dorothyPosition / width)
+
+  // * Move Witch across grid
+
+  function moveWitchOne() {
+    cells[witchPositionOne].classList.remove(witchClass)
+    witchPositionOne -= 1
+    cells[witchPositionOne].classList.add(witchClass)
+    if (witchPositionOne > 49) {
+      witchPositionOne += 1
+    } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
+      console.log('game over')
+    }
+  }
+
+  function moveWitchTwo() {
+    cells[witchPositionTwo].classList.remove(witchClass)
+    witchPositionTwo += 1
+    cells[witchPositionTwo].classList.add(witchClass)
+    if (witchPositionTwo < 61) {
+      cells[witchPositionTwo].classList.remove(witchClass)
+      witchPositionTwo = 69
+    } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
+      console.log('game over')
+    }
+  }
+
+  function moveWitchThree() {
+    cells[witchPositionThree].classList.remove(witchClass)
+    witchPositionThree -= 1
+    cells[witchPositionThree].classList.add(witchClass)
+    if (witchPositionThree > 78) {
+      cells[witchPositionThree].classList.remove(witchClass)
+      witchPositionThree = 70
+    } else if (cells[dorothyPosition] === cells[witchPositionThree]) {
+      console.log('game over')
+    }
+  }
+
+  function moveWitchFour() {
+    cells[witchPositionFour].classList.remove(witchClass)
+    witchPositionFour += 1
+    cells[witchPositionFour].classList.add(witchClass)
+    if (witchPositionFour < 81) {
+      cells[witchPositionFour].classList.remove(witchClass)
+      witchPositionFour = 89
+    } else if (cells[dorothyPosition] === cells[witchPositionFour]) {
+      console.log('game over')
+    }
+  }
+
 
   // ! EVENT LISTENERS
 
@@ -135,9 +186,16 @@ function init() {
   addHome(homePositionFour)
 
   addWitch(witchPositionOne)
+  addWitch(witchPositionTwo)
+  addWitch(witchPositionThree)
+  addWitch(witchPositionFour)
 
-  // getDorothyHome(dorothyIsHome)
-
+  setInterval(function() {
+    moveWitchOne(witchPositionOne) 
+    moveWitchTwo(witchPositionTwo)
+    moveWitchThree(witchPositionThree)
+    moveWitchFour(witchPositionFour)
+  }, 1000)
 }
 
 window.addEventListener('DOMContentLoaded', init)
