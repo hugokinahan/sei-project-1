@@ -11,6 +11,12 @@ function init() {
   const dorothyClass = 'dorothy'
   let dorothyPosition = 94
 
+  const homeClass = 'home'
+  const homePositionOne = 1
+  const homePositionTwo = 3
+  const homePositionThree = 6
+  const homePositionFour = 8
+
   // * Make a grid
   function createGrid(startingPosition) {
     for (let i = 0; i < cellCount; i++) {
@@ -22,6 +28,7 @@ function init() {
     addDorothy(startingPosition)
   }
 
+  // ! DOROTHY
   // * Add Dorothy to grid
   function addDorothy(position) {
     cells[position].classList.add(dorothyClass)
@@ -38,8 +45,6 @@ function init() {
   
     const horizontalPosition = dorothyPosition % width
     const verticalPosition = Math.floor(dorothyPosition / width)
-
-
 
     switch (event.keyCode) {
       case 39: //arrow right
@@ -65,12 +70,29 @@ function init() {
     addDorothy(dorothyPosition)
   }
 
+  // ! DOROTHY'S HOME
+  // * Add Home to grid
+  function addHome(position) {
+    cells[position].classList.add(homeClass)
+  }
+
+  // ? When can this be implemented?
+  // // * Remove Home from the grid
+  // function removeHome(position) {
+  //   cells[position].classList.remove(homeClass)
+  // }
+
 
   // ! EVENT LISTENERS
 
   document.addEventListener('keyup', handleKeyUp)
 
   createGrid(dorothyPosition)
+
+  addHome(homePositionOne)
+  addHome(homePositionTwo)
+  addHome(homePositionThree)
+  addHome(homePositionFour)
 
 }
 
