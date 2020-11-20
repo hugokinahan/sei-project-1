@@ -43,15 +43,19 @@ function init() {
 
     switch (event.keyCode) {
       case 39: //arrow right
+      case 68: //d key
         if (horizontalPosition < width - 1) dorothyPosition++
         break
       case 37: //arrow left
+      case 65: //a key
         if (horizontalPosition > 0) dorothyPosition--
         break
       case 38: //arrow up
+      case 87: //w key
         if (verticalPosition > 0) dorothyPosition -= width
         break
       case 40: //arrow down
+      case 83: //s key
         if (verticalPosition < width - 1) dorothyPosition += width
         break
       default:
