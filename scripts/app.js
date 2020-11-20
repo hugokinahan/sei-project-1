@@ -24,7 +24,7 @@ function init() {
   let witchPositionFour = 80
 
 
-  let timerId = null
+  const timerId = null
 
   // * Make a grid
 
@@ -130,8 +130,13 @@ function init() {
     cells[witchPositionOne].classList.remove(witchClass)
     witchPositionOne -= 1
     cells[witchPositionOne].classList.add(witchClass)
-    if (witchPositionOne > 49) {
+    if (witchPositionOne > 58) {
+      cells[witchPositionOne].classList.remove(witchClass)
+      witchPositionOne = 50
+    } if (witchPositionOne < 50) {
+      cells[witchPositionOne].classList.remove(witchClass)
       witchPositionOne += 1
+      cells[witchPositionOne].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
       console.log('game over')
     }
@@ -144,6 +149,10 @@ function init() {
     if (witchPositionTwo < 61) {
       cells[witchPositionTwo].classList.remove(witchClass)
       witchPositionTwo = 69
+    } if (witchPositionTwo > 69) {
+      cells[witchPositionTwo].classList.remove(witchClass)
+      witchPositionTwo -= 1
+      cells[witchPositionTwo].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
       console.log('game over')
     }
@@ -156,6 +165,10 @@ function init() {
     if (witchPositionThree > 78) {
       cells[witchPositionThree].classList.remove(witchClass)
       witchPositionThree = 70
+    } if (witchPositionThree < 70) {
+      cells[witchPositionThree].classList.remove(witchClass)
+      witchPositionThree += 1
+      cells[witchPositionThree].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionThree]) {
       console.log('game over')
     }
@@ -168,6 +181,10 @@ function init() {
     if (witchPositionFour < 81) {
       cells[witchPositionFour].classList.remove(witchClass)
       witchPositionFour = 89
+    } if (witchPositionFour > 89) {
+      cells[witchPositionFour].classList.remove(witchClass)
+      witchPositionFour -= 1
+      cells[witchPositionFour].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionFour]) {
       console.log('game over')
     }
