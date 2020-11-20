@@ -23,6 +23,17 @@ function init() {
   let witchPositionThree = 79
   let witchPositionFour = 80
 
+  const logClass = 'log'
+  let logPositionOne = 10
+  let logPositionTwo = 11
+  let logPositionThree = 29
+  let logPositionFour = 28
+  let logPositionFive = 27
+  let logPositionSix = 26
+  let logPositionSeven = 30
+  let logPositionEight = 31
+  let logPositionNine = 32
+
 
   const timerId = null
 
@@ -138,7 +149,7 @@ function init() {
       witchPositionOne += 1
       cells[witchPositionOne].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
-      console.log('game over')
+      gameOver()
     }
   }
 
@@ -154,7 +165,7 @@ function init() {
       witchPositionTwo -= 1
       cells[witchPositionTwo].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
-      console.log('game over')
+      gameOver()
     }
   }
 
@@ -170,7 +181,7 @@ function init() {
       witchPositionThree += 1
       cells[witchPositionThree].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionThree]) {
-      console.log('game over')
+      gameOver()
     }
   }
 
@@ -186,10 +197,90 @@ function init() {
       witchPositionFour -= 1
       cells[witchPositionFour].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionFour]) {
-      console.log('game over')
+      gameOver()
     }
   }
 
+  // ! LOGS CROSSING
+
+  // * Add Log to grid
+  function addLog(position) {
+    cells[position].classList.add(logClass)
+  }
+
+  // * Move Log across grid
+
+  // function moveWitchOne() {
+  //   cells[witchPositionOne].classList.remove(witchClass)
+  //   witchPositionOne -= 1
+  //   cells[witchPositionOne].classList.add(witchClass)
+  //   if (witchPositionOne > 58) {
+  //     cells[witchPositionOne].classList.remove(witchClass)
+  //     witchPositionOne = 50
+  //   } if (witchPositionOne < 50) {
+  //     cells[witchPositionOne].classList.remove(witchClass)
+  //     witchPositionOne += 1
+  //     cells[witchPositionOne].classList.add(witchClass) 
+  //   } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
+  //     gameOver()
+  //   }
+  // }
+
+  // function moveWitchTwo() {
+  //   cells[witchPositionTwo].classList.remove(witchClass)
+  //   witchPositionTwo += 1
+  //   cells[witchPositionTwo].classList.add(witchClass)
+  //   if (witchPositionTwo < 61) {
+  //     cells[witchPositionTwo].classList.remove(witchClass)
+  //     witchPositionTwo = 69
+  //   } if (witchPositionTwo > 69) {
+  //     cells[witchPositionTwo].classList.remove(witchClass)
+  //     witchPositionTwo -= 1
+  //     cells[witchPositionTwo].classList.add(witchClass) 
+  //   } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
+  //     gameOver()
+  //   }
+  // }
+
+  // function moveWitchThree() {
+  //   cells[witchPositionThree].classList.remove(witchClass)
+  //   witchPositionThree -= 1
+  //   cells[witchPositionThree].classList.add(witchClass)
+  //   if (witchPositionThree > 78) {
+  //     cells[witchPositionThree].classList.remove(witchClass)
+  //     witchPositionThree = 70
+  //   } if (witchPositionThree < 70) {
+  //     cells[witchPositionThree].classList.remove(witchClass)
+  //     witchPositionThree += 1
+  //     cells[witchPositionThree].classList.add(witchClass) 
+  //   } else if (cells[dorothyPosition] === cells[witchPositionThree]) {
+  //     gameOver()
+  //   }
+  // }
+
+  // function moveWitchFour() {
+  //   cells[witchPositionFour].classList.remove(witchClass)
+  //   witchPositionFour += 1
+  //   cells[witchPositionFour].classList.add(witchClass)
+  //   if (witchPositionFour < 81) {
+  //     cells[witchPositionFour].classList.remove(witchClass)
+  //     witchPositionFour = 89
+  //   } if (witchPositionFour > 89) {
+  //     cells[witchPositionFour].classList.remove(witchClass)
+  //     witchPositionFour -= 1
+  //     cells[witchPositionFour].classList.add(witchClass) 
+  //   } else if (cells[dorothyPosition] === cells[witchPositionFour]) {
+  //     gameOver()
+  //   }
+  // }
+
+  // ! Game Over
+
+  function gameOver() {
+    clearInterval(timerId)
+    removeDorothy(dorothyPosition)
+    alert('Game Over')
+  }
 
   // ! EVENT LISTENERS
 
@@ -206,6 +297,16 @@ function init() {
   addWitch(witchPositionTwo)
   addWitch(witchPositionThree)
   addWitch(witchPositionFour)
+
+  addLog(logPositionOne)
+  addLog(logPositionTwo)
+  addLog(logPositionThree)
+  addLog(logPositionFour)
+  addLog(logPositionFive)
+  addLog(logPositionSix)
+  addLog(logPositionSeven)
+  addLog(logPositionEight)
+  addLog(logPositionNine)
 
   setInterval(function() {
     moveWitchOne(witchPositionOne) 
