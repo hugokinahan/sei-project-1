@@ -1,12 +1,13 @@
 function init() {
 
   // ! VARIABLES
-
+  // * DOM VARIABLES
   const grid = document.querySelector('.grid')
+  const cells = []
+  const scoreDisplay = document.querySelector('#score-display')
   
   const width = 10
   const cellCount = width * width
-  const cells = []
 
   const dorothyClass = 'dorothy'
   let dorothyPosition = 94
@@ -23,7 +24,24 @@ function init() {
   let witchPositionThree = 79
   let witchPositionFour = 80
 
+  let score = 0
+
+  // * Timer variables
+  let obstacleTimerId = null
   const timerId = null
+
+  // * SOUNDS
+  // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
+  // const audio = document.getElementById('audio')
+
+  // function playBackgroundAudio() {
+  //   audio.src = 'assets/theres-no-place-like-home.wav'
+  //   audio.play()
+  // }
+
+  // audio.addEventListener('keyUp', playBackgroundAudio)
+
+
 
   // * Make a grid
 
@@ -112,9 +130,6 @@ function init() {
     } 
   }
 
-  function hasDorothyAndHome(element) {
-    return element.classList.contains(dorothyClass)
-  }
 
   // ! WITCHES CROSSING
 
@@ -147,8 +162,8 @@ function init() {
     cells[witchPositionTwo].classList.add(witchClass)
     if (witchPositionTwo < 61) {
       cells[witchPositionTwo].classList.remove(witchClass)
-      witchPositionTwo = 69
-    } if (witchPositionTwo > 69) {
+      witchPositionTwo = 68
+    } if (witchPositionTwo > 68) {
       cells[witchPositionTwo].classList.remove(witchClass)
       witchPositionTwo -= 1
       cells[witchPositionTwo].classList.add(witchClass) 
@@ -354,7 +369,18 @@ function init() {
     }
   }
 
-  // ! Game Over
+  // ! SCORING
+
+  function handleDorothyScore() {
+    if (getDorothyHome === true) {
+      score += 100
+      removeDorothy(event.target.dataset.index)
+    }
+    scoreDisplay.textContent = score
+  }
+  
+
+  // ! GAME OVER
 
   function gameOver() {
     clearInterval(timerId)
@@ -406,6 +432,8 @@ function init() {
     moveLogEight(logPositionEight)
     moveLogNine(logPositionNine)
   }, 1000)  
+
+  cells.forEach(cell => cell.addEventListener('keyUp', handleDorothyScore))
 }
 
 window.addEventListener('DOMContentLoaded', init)
