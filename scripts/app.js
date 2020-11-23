@@ -438,7 +438,7 @@ function init() {
 
   // ! SCORING
 
-  function handleDorothyScore() {
+  function handleDorothyScore(event) {
     if (getDorothyHome === true) {
       score += 100
       removeDorothy(event.target.dataset.index)
@@ -452,14 +452,7 @@ function init() {
   function gameOver() {
     clearInterval(timerId)
     removeDorothy(dorothyPosition)
-    alert('Game Over')
-  }
-
-  // ! RESET
-
-  function reset() {
-    removeDorothy()
-
+    alert(score)
   }
 
   // ! EVENT LISTENERS
