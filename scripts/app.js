@@ -28,7 +28,7 @@ function init() {
   let score = 0
 
   // * Timer variables
-  let obstacleTimerId = null
+  const obstacleTimerId = null
   const timerId = null
 
   // * SOUNDS
@@ -455,6 +455,13 @@ function init() {
     alert('Game Over')
   }
 
+  // ! RESET
+
+  function reset() {
+    removeDorothy()
+
+  }
+
   // ! EVENT LISTENERS
 
   document.addEventListener('keyup', handleKeyUp)
@@ -503,6 +510,13 @@ function init() {
   }, 1000)  
 
   cells.forEach(cell => cell.addEventListener('keyUp', handleDorothyScore))
+
+  window.addEventListener('keydown', function(event) {
+    // space and arrow keys
+    if ([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1) {
+      event.preventDefault()
+    }
+  }, false)
 }
 
 window.addEventListener('DOMContentLoaded', init)
