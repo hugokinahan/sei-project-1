@@ -100,13 +100,14 @@ function init() {
 
   const dorothyLives = [dorothyLifeOne, dorothyLifeTwo, dorothyLifeThree]
 
-  // // How many Dorothy's are safe
-  // const safeDorothyOne = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(2)')
-  // const safeDorothyTwo = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(3)')
-  // const safeDorothyThree = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(4)')
-  // const safeDorothyFour = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(5)')
+  // How many Dorothy's are safe
+  const safeDorothyOne = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(2)')
+
+  const safeDorothyTwo = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(3)')
+  const safeDorothyThree = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(4)')
+  const safeDorothyFour = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(5)')
   
-  // const safeDorothy = [safeDorothyOne, safeDorothyTwo, safeDorothyThree, safeDorothyFour]
+  const safeDorothy = [safeDorothyOne, safeDorothyTwo, safeDorothyThree, safeDorothyFour]
 
   // ! DOROTHY'S HOME
   // * Add Home to grid
@@ -163,7 +164,7 @@ function init() {
       witchPositionOne = 59
       cells[witchPositionOne].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
-      loseLife('life lost')
+      gameOver()
     }
   }
 
