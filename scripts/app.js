@@ -452,6 +452,7 @@ function init() {
   function gameOver() {
     clearInterval(timerId)
     removeDorothy(dorothyPosition)
+    addDorothy(dorothyPosition = 94)
     alert(score)
   }
 
