@@ -75,33 +75,43 @@ body > div.grid-wrapper > div.lives {
 body > div.grid-wrapper > div.lives > div:nth-child(2) {
   background-color: yellow;
   background-image: url('../assets/dorothy.png');
-  width: 20px;
-  height: 20px;
+  width: 70px;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(3) {
   background-color: yellow;
   background-image: url('../assets/dorothy.png');
-  width: 20px;
-  height: 20px;
+  width: 70px ;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(4) {
   background-color: yellow;
   background-image: url('../assets/dorothy.png');
-  width: 20px;
-  height: 20px;
+  width: 70px ;
+  height: 130px;
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
 }
 
 body > div.grid-wrapper > div.lives > div.safe-dorothy > p {
   background-color: yellow;
+  background-image: url('../assets/dorothy.png');
 }
 
 body > div.grid-wrapper > div.lives > div.safe-dorothy {
   background-color: yellow;
   display: flex;
   flex-direction: column;
-  
+  background-image: url('../assets/dorothy.png');
 }
 
 /* STARTING ROAD - CAN I GROUP THESE TOGETHER? */
