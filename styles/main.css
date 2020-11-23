@@ -5,9 +5,6 @@
 body {
   background-color: yellow;
   font-family: 'Lobster Two', cursive;
-}
-
-h1 {
   text-align: center;
 }
 
@@ -38,7 +35,7 @@ h1 {
 }
 
 .grid div.dorothy {
-  background-image: url('../assets/dorothy-dorothy-wizard-of-oz-transparent-png-365x679-free-dorothy-and-the-wizard-of-oz-png-820_759.png');
+  background-image: url('../assets/dorothy.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
@@ -69,46 +66,84 @@ h1 {
   background-position: center;
 }
 
+body > div.grid-wrapper > div.lives {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+body > div.grid-wrapper > div.lives > div:nth-child(2) {
+  background-color: yellow;
+  background-image: url('../assets/dorothy.png');
+  width: 20px;
+  height: 20px;
+}
+
+body > div.grid-wrapper > div.lives > div:nth-child(3) {
+  background-color: yellow;
+  background-image: url('../assets/dorothy.png');
+  width: 20px;
+  height: 20px;
+}
+
+body > div.grid-wrapper > div.lives > div:nth-child(4) {
+  background-color: yellow;
+  background-image: url('../assets/dorothy.png');
+  width: 20px;
+  height: 20px;
+}
+
+body > div.grid-wrapper > div.lives > div.safe-dorothy > p {
+  background-color: yellow;
+}
+
+body > div.grid-wrapper > div.lives > div.safe-dorothy {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  
+}
+
 /* STARTING ROAD - CAN I GROUP THESE TOGETHER? */
 
 body > div > div > div:nth-child(91) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(92) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(93) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(94) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(95) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(96) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(97) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(98) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(99) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(100) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 
@@ -282,43 +317,43 @@ body > div > div > div:nth-child(90) {
 /* MIDDLE ROAD - IS THERE A WAY TO GROUP THESE AS ONE?*/
 
 body > div > div > div:nth-child(41) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(42) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(43) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(44) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(45) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(46) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(47) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(48) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(49) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 body > div > div > div:nth-child(50) {
-  background-image: url('../assets/yellow-brick-wall-vector-illustration-background-131489114\ \(1\).jpg');
+  background-image: url('../assets/yellow-brick-road.jpg');
   background-size: 350%;
 }
 

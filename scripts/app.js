@@ -23,6 +23,7 @@ function init() {
   let witchPositionTwo = 60
   let witchPositionThree = 79
   let witchPositionFour = 80
+  let witchPositionFive = 82
 
   let score = 0
 
@@ -32,18 +33,8 @@ function init() {
 
   // * SOUNDS
   // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
-  // const audio = document.getElementById('audio')
 
-  // function playBackgroundAudio() {
-  //   audio.src = 'assets/theres-no-place-like-home.wav'
-  //   audio.play()
-  // }
-
-  // audio.addEventListener('keyUp', playBackgroundAudio)
-
-
-
-  // * Make a grid
+  // * MAKE A GRID
 
   function createGrid(startingPosition) {
     for (let i = 0; i < cellCount; i++) {
@@ -100,20 +91,22 @@ function init() {
 
   // ! DOROTHY LIVES
 
-  // let lives = 3
+  let lives = 3
 
-  // //lives dorthothy has 
-  // const dorothyLifeOne = document.querySelector('body > div > div.lives > div:nth-child(2)')
-  // const dorothyLifeTwo = document.querySelector('body > div > div.lives > div:nth-child(3)')
-  // const dorothyLifeThree = document.querySelector('body > div > div.lives > div:nth-child(4)')
-  // const dorothyLives = [dorothyLifeOne, dorothyLifeTwo, dorothyLifeThree]
+  // * lives dortothy has 
+  const dorothyLifeOne = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(2)')
+  const dorothyLifeTwo = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(3)')
+  const dorothyLifeThree = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(4)')
+
+  const dorothyLives = [dorothyLifeOne, dorothyLifeTwo, dorothyLifeThree]
 
   // // How many Dorothy's are safe
   // const safeDorothyOne = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(2)')
   // const safeDorothyTwo = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(3)')
   // const safeDorothyThree = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(4)')
-  // const safeDorothyThree = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(5)')
+  // const safeDorothyFour = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(5)')
   
+  // const safeDorothy = [safeDorothyOne, safeDorothyTwo, safeDorothyThree, safeDorothyFour]
 
   // ! DOROTHY'S HOME
   // * Add Home to grid
@@ -161,17 +154,19 @@ function init() {
     cells[witchPositionOne].classList.remove(witchClass)
     witchPositionOne -= 1
     cells[witchPositionOne].classList.add(witchClass)
-    if (witchPositionOne > 58) {
+    if (witchPositionOne > 59) {
       cells[witchPositionOne].classList.remove(witchClass)
-      witchPositionOne = 50
-    } if (witchPositionOne < 50) {
+      witchPositionOne === 50
+    } 
+    if (witchPositionOne < 50) {
       cells[witchPositionOne].classList.remove(witchClass)
-      witchPositionOne += 1
+      witchPositionOne = 59
       cells[witchPositionOne].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
-      gameOver()
+      loseLife('life lost')
     }
   }
+
 
   function moveWitchTwo() {
     cells[witchPositionTwo].classList.remove(witchClass)
@@ -179,10 +174,10 @@ function init() {
     cells[witchPositionTwo].classList.add(witchClass)
     if (witchPositionTwo < 61) {
       cells[witchPositionTwo].classList.remove(witchClass)
-      witchPositionTwo = 68
-    } if (witchPositionTwo > 68) {
+      witchPositionTwo = 69
+    } if (witchPositionTwo === 70) {
       cells[witchPositionTwo].classList.remove(witchClass)
-      witchPositionTwo -= 1
+      witchPositionTwo = 60
       cells[witchPositionTwo].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
       gameOver()
@@ -193,12 +188,12 @@ function init() {
     cells[witchPositionThree].classList.remove(witchClass)
     witchPositionThree -= 1
     cells[witchPositionThree].classList.add(witchClass)
-    if (witchPositionThree > 78) {
+    if (witchPositionThree > 79) {
       cells[witchPositionThree].classList.remove(witchClass)
       witchPositionThree = 70
     } if (witchPositionThree < 70) {
       cells[witchPositionThree].classList.remove(witchClass)
-      witchPositionThree += 1
+      witchPositionThree = 79
       cells[witchPositionThree].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionThree]) {
       gameOver()
@@ -212,12 +207,66 @@ function init() {
     if (witchPositionFour < 81) {
       cells[witchPositionFour].classList.remove(witchClass)
       witchPositionFour = 89
-    } if (witchPositionFour > 89) {
+    } if (witchPositionFour === 90) {
       cells[witchPositionFour].classList.remove(witchClass)
-      witchPositionFour -= 1
+      witchPositionFour = 80
       cells[witchPositionFour].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionFour]) {
       gameOver()
+    }
+  }
+
+  function moveWitchFive() {
+    cells[witchPositionFive].classList.remove(witchClass)
+    witchPositionFive += 1
+    cells[witchPositionFive].classList.add(witchClass)
+    if (witchPositionFive === 82) {
+      cells[witchPositionFive].classList.remove(witchClass)
+      witchPositionFive = 89
+    } if (witchPositionFive === 90) {
+      cells[witchPositionFive].classList.remove(witchClass)
+      witchPositionFive = 80
+      cells[witchPositionFive].classList.add(witchClass) 
+    } else if (cells[dorothyPosition] === cells[witchPositionFive]) {
+      gameOver()
+    }
+  }
+
+  // // ! Checking for Witches 
+
+  // function checkWitch() {
+  //   const activeWitchOne = dorothyPosition === witchPositionOne
+  //   console.log(activeWitchOne)
+  //   const activeWitchTwo = dorothyPosition === witchPositionTwo
+  //   console.log(activeWitchTwo)
+  //   const activeWitchThree = dorothyPosition === witchPositionThree
+  //   console.log(activeWitchThree)
+  //   const activeWitchFour = dorothyPosition === witchPositionFour
+  //   console.log(activeWitchFour)
+
+  //   // if (activeWitchOne || activeWitchTwo || activeWitchThree || activeWitchFour) {
+  //   //   loseLife()
+  //   // }
+
+  //   // if (lives <= 0) {
+  //   //   reset()
+  //   // }
+  // }
+
+  // ! Losing a life
+
+  function loseLife() {
+    removeDorothy()
+    addDorothy()
+    setTimeout(wait, 500)
+    function wait() {
+      removeDorothy()
+      dorothyLives[lives - 1]
+      lives--
+      // dorothyPosition = 94
+      // if (lives === -1) {
+      //   reset()
+      // }
     }
   }
 
@@ -249,9 +298,9 @@ function init() {
     if (logPositionOne < 11) {
       cells[logPositionOne].classList.remove(logClass)
       logPositionOne = 18
-    } if (logPositionOne > 18) {
+    } if (logPositionOne === 20) {
       cells[logPositionOne].classList.remove(logClass)
-      logPositionOne -= 1
+      logPositionOne = 10
       cells[logPositionOne].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionOne]) {
       console.log('Dorothy on log')
@@ -262,12 +311,12 @@ function init() {
     cells[logPositionTwo].classList.remove(logClass)
     logPositionTwo += 1
     cells[logPositionTwo].classList.add(logClass)
-    if (logPositionTwo < 12) {
+    // if (logPositionTwo < 12) {
+    //   cells[logPositionTwo].classList.remove(logClass)
+    //   logPositionTwo = 19
+    if (logPositionTwo === 20) {
       cells[logPositionTwo].classList.remove(logClass)
-      logPositionTwo = 19
-    } if (logPositionTwo > 19) {
-      cells[logPositionTwo].classList.remove(logClass)
-      logPositionTwo -= 1
+      logPositionTwo = 10
       cells[logPositionTwo].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionTwo]) {
       console.log('Dorothy on log')
@@ -278,28 +327,29 @@ function init() {
     cells[logPositionThree].classList.remove(logClass)
     logPositionThree -= 1
     cells[logPositionThree].classList.add(logClass)
-    if (logPositionThree > 28) {
+    if (logPositionThree > 29) {
       cells[logPositionThree].classList.remove(logClass)
-      logPositionThree = 23
-    } if (logPositionThree < 23) {
+      logPositionThree = 20
+    } if (logPositionThree < 20) {
       cells[logPositionThree].classList.remove(logClass)
-      logPositionThree += 1
+      logPositionThree = 29
       cells[logPositionThree].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionThree]) {
       console.log('Dorothy on log')
     }
   }
 
+
   function moveLogFour() {
     cells[logPositionFour].classList.remove(logClass)
     logPositionFour -= 1
     cells[logPositionFour].classList.add(logClass)
-    if (logPositionFour > 27) {
+    if (logPositionFour > 29) {
       cells[logPositionFour].classList.remove(logClass)
-      logPositionFour = 22
-    } if (logPositionFour < 22) {
+      logPositionFour = 20
+    } if (logPositionFour === 20) {
       cells[logPositionFour].classList.remove(logClass)
-      logPositionFour += 1
+      logPositionFour = 29
       cells[logPositionFour].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionFour]) {
       console.log('Dorothy on log')
@@ -310,12 +360,12 @@ function init() {
     cells[logPositionFive].classList.remove(logClass)
     logPositionFive -= 1
     cells[logPositionFive].classList.add(logClass)
-    if (logPositionFive > 26) {
+    if (logPositionFive > 29) {
       cells[logPositionFive].classList.remove(logClass)
-      logPositionFive = 21
-    } if (logPositionFive < 21) {
+      logPositionFive = 20
+    } if (logPositionFive === 20) {
       cells[logPositionFive].classList.remove(logClass)
-      logPositionFive += 1
+      logPositionFive = 29
       cells[logPositionFive].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionFive]) {
       console.log('Dorothy on log')
@@ -326,12 +376,12 @@ function init() {
     cells[logPositionSix].classList.remove(logClass)
     logPositionSix -= 1
     cells[logPositionSix].classList.add(logClass)
-    if (logPositionSix > 25) {
+    if (logPositionSix > 29) {
       cells[logPositionSix].classList.remove(logClass)
       logPositionSix = 20
-    } if (logPositionSix < 20) {
+    } if (logPositionSix === 20) {
       cells[logPositionSix].classList.remove(logClass)
-      logPositionSix += 1
+      logPositionSix = 29
       cells[logPositionSix].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionSix]) {
       console.log('Dorothy on log')
@@ -345,9 +395,9 @@ function init() {
     if (logPositionSeven < 31) {
       cells[logPositionSeven].classList.remove(logClass)
       logPositionSeven = 37
-    } if (logPositionSeven > 37) {
+    } if (logPositionSeven === 40) {
       cells[logPositionSeven].classList.remove(logClass)
-      logPositionSeven -= 1
+      logPositionSeven = 30
       cells[logPositionSeven].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionSeven]) {
       console.log('Dorothy on log')
@@ -358,12 +408,12 @@ function init() {
     cells[logPositionEight].classList.remove(logClass)
     logPositionEight += 1
     cells[logPositionEight].classList.add(logClass)
-    if (logPositionEight < 32) {
+    if (logPositionEight < 31) {
       cells[logPositionEight].classList.remove(logClass)
       logPositionEight = 38
-    } if (logPositionEight > 38) {
+    } if (logPositionEight === 40) {
       cells[logPositionEight].classList.remove(logClass)
-      logPositionEight -= 1
+      logPositionEight = 30
       cells[logPositionEight].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionEight]) {
       console.log('Dorothy on log')
@@ -374,12 +424,12 @@ function init() {
     cells[logPositionNine].classList.remove(logClass)
     logPositionNine += 1
     cells[logPositionNine].classList.add(logClass)
-    if (logPositionNine < 33) {
+    if (logPositionNine < 31) {
       cells[logPositionNine].classList.remove(logClass)
       logPositionNine = 39
-    } if (logPositionNine > 39) {
+    } if (logPositionNine === 40) {
       cells[logPositionNine].classList.remove(logClass)
-      logPositionNine -= 1
+      logPositionNine = 30
       cells[logPositionNine].classList.add(logClass) 
     } else if (cells[dorothyPosition] === cells[logPositionNine]) {
       console.log('Dorothy on log')
@@ -420,6 +470,7 @@ function init() {
   addWitch(witchPositionTwo)
   addWitch(witchPositionThree)
   addWitch(witchPositionFour)
+  addWitch(witchPositionFive)
 
   addLog(logPositionOne)
   addLog(logPositionTwo)
@@ -436,6 +487,7 @@ function init() {
     moveWitchTwo(witchPositionTwo)
     moveWitchThree(witchPositionThree)
     moveWitchFour(witchPositionFour)
+    moveWitchFive
   }, 1000)
 
   setInterval(function() {
