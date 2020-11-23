@@ -98,6 +98,23 @@ function init() {
     addDorothy(dorothyPosition)
   }
 
+  // ! DOROTHY LIVES
+
+  // let lives = 3
+
+  // //lives dorthothy has 
+  // const dorothyLifeOne = document.querySelector('body > div > div.lives > div:nth-child(2)')
+  // const dorothyLifeTwo = document.querySelector('body > div > div.lives > div:nth-child(3)')
+  // const dorothyLifeThree = document.querySelector('body > div > div.lives > div:nth-child(4)')
+  // const dorothyLives = [dorothyLifeOne, dorothyLifeTwo, dorothyLifeThree]
+
+  // // How many Dorothy's are safe
+  // const safeDorothyOne = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(2)')
+  // const safeDorothyTwo = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(3)')
+  // const safeDorothyThree = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(4)')
+  // const safeDorothyThree = document.querySelector('body > div > div.lives > div.safe-dorothy > div:nth-child(5)')
+  
+
   // ! DOROTHY'S HOME
   // * Add Home to grid
   function addHome(position) {
@@ -209,14 +226,14 @@ function init() {
   // * LOG VARIABLES 
   const logClass = 'log'
   let logPositionOne = 10
-  let logPositionTwo = 11
+  let logPositionTwo = 12
   let logPositionThree = 29
-  let logPositionFour = 28
-  let logPositionFive = 27
-  let logPositionSix = 26
+  let logPositionFour = 27
+  let logPositionFive = 25
+  let logPositionSix = 23
   let logPositionSeven = 30
-  let logPositionEight = 31
-  let logPositionNine = 32
+  let logPositionEight = 32
+  let logPositionNine = 34
 
   // * Add Log to grid
   function addLog(position) {

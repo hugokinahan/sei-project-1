@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/main.css">
-  <script src="scripts/app.js" charset="utf-8"></script>
-  <title>Follow The Yellow Brick Road</title>
-</head>
-<body>
-  <div class="controls-wrapper">
-    <p>Current Score <span id="score-display">0</span></p>
-  </div>
-  <div class="grid-wrapper">
-    <div class="grid"></div>
-  </div>
-  <audio id="audio"></audio>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+    <script src="scripts/app.js" charset="utf-8"></script>
+    <title>Follow The Yellow Brick Road</title>
+  </head>
+  <body>
+    <h1>The Wizard Of Oz: Follow The Yellow Brick Road</h1>
+    <div class="controls-wrapper">
+      <p>Current Score <span id="score-display">0</span></p>
+    </div>
+    <div class="grid-wrapper">
+      <div class="grid"></div>
+      <br></br>
+      <div class="lives">
+        <p>Lives remaining:</p>
+        <div class="life">&nbsp;</div>
+        <div class="life">&nbsp;</div>
+        <div class="life">&nbsp;</div>
+        <br></br>
+        <div class ="safe-dorothy">
+          <p>Safe</p>
+          <div class="safe">&nbsp;</div>
+          <div class="safe">&nbsp;</div>
+          <div class="safe">&nbsp;</div>
+          <div class="safe">&nbsp;</div>
+        </div>  
+      </div>
+      <audio id="audio"></audio>
+    </div>
+  </body>
 </html>
