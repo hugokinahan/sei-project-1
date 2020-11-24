@@ -80,7 +80,7 @@ function init() {
       case 38: //arrow up
       case 87: //w key
         if (verticalPosition > 0) dorothyPosition -= width
-        getDorothyHome(dorothyIsHome)
+        getDorothyHome()
         break
       case 40: //arrow down
       case 83: //s key
@@ -122,28 +122,16 @@ function init() {
 
   // ! DOROTHY LANDING ON HOME 
   
-  const dorothyIsHome = true
-  
   function getDorothyHome() {
     if (dorothyPosition === homePositionOne) {
       return scoreDisplay.innerHTML = score += 100
-      
     } if (dorothyPosition === homePositionTwo) {
-      console.log(score += 100)
-      return dorothyIsHome
+      return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionThree) {
-      console.log(score += 100)
-      return dorothyIsHome
+      return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionFour) {
-      console.log(score += 100)
-      return dorothyIsHome
+      return scoreDisplay.innerHTML = score += 100
     } 
-  }
-
-  function dorothySafe() {
-    if (dorothyIsHome === true) {
-      addDorothy(dorothyPosition = 94)
-    }
   }
 
 
@@ -447,7 +435,7 @@ function init() {
 
   createGrid(dorothyPosition)
 
-  dorothySafe()
+
   handleDorothyScore()
 
   addHome(homePositionOne)
