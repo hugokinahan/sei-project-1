@@ -97,6 +97,7 @@ function init() {
   // * Move Dorothy
   function handleKeyUp(event) {
     removeDorothy(dorothyPosition)
+    scoreDisplay.innerHTML = score += 10
   
     const horizontalPosition = dorothyPosition % width
     const verticalPosition = Math.floor(dorothyPosition / width)
@@ -231,6 +232,8 @@ function init() {
     } 
   }
 
+
+  
   // // ! PLAYER WINS
 
   // function playerWins() {
