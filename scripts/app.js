@@ -127,10 +127,13 @@ function init() {
       addDorothy(dorothyPosition = 94)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionTwo) {
+      addDorothy(dorothyPosition = 94)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionThree) {
+      addDorothy(dorothyPosition = 94)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionFour) {
+      addDorothy(dorothyPosition = 94)
       return scoreDisplay.innerHTML = score += 100
     } 
   }
