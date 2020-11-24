@@ -25,6 +25,14 @@ function init() {
   let witchPositionFour = 80
   let witchPositionFive = 82
 
+  const tinmanClass = 'tinman'
+  const tinmanBonusPosition = Math.floor(Math.random() * cellCount)
+
+  // * Add Tinman to grid
+  function addTinman(position) {
+    cells[position].classList.add(tinmanClass)
+  }
+
   let score = 0
 
   // * TIMER VARIABLES
@@ -415,7 +423,7 @@ function init() {
 
   // ! SCORING
 
-  function handleDorothyScore(event) {
+  function handleDorothyScore() {
     if (dorothyPosition === homePositionOne) {
       score = score += 100
       scoreDisplay.innerHTML = score
@@ -446,6 +454,8 @@ function init() {
   addHome(homePositionTwo)
   addHome(homePositionThree)
   addHome(homePositionFour)
+
+  addTinman(tinmanBonusPosition)
 
   addWitch(witchPositionOne)
   addWitch(witchPositionTwo)
