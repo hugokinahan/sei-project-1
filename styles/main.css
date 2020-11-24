@@ -66,6 +66,22 @@ body {
   background-position: center;
 }
 
+.grid div.lion {
+  background-image: url('../assets/lion.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-position: center;
+}
+
+.grid div.scarecrow {
+  background-image: url('../assets/scarecrow.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-position: center;
+}
+
 .grid div.log {
   background-image: url('../assets/log.png');
   background-repeat: no-repeat;

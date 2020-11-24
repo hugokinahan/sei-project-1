@@ -28,10 +28,11 @@ function init() {
   const tinmanClass = 'tinman'
   const tinmanBonusPosition = Math.floor(Math.random() * cellCount)
 
-  // * Add Tinman to grid
-  function addTinman(position) {
-    cells[position].classList.add(tinmanClass)
-  }
+  const lionClass = 'lion'
+  const lionBonusPosition = Math.floor(Math.random() * cellCount)
+
+  const scarecrowClass = 'scarecrow'
+  const scarecrowBonusPosition = Math.floor(Math.random() * cellCount)
 
   let score = 0
 
@@ -100,6 +101,29 @@ function init() {
 
     addDorothy(dorothyPosition)
   }
+
+  // ! ADDING BONUS CHARACTERS
+
+  // * Add Tinman to grid
+  function addTinman(position) {
+    cells[position].classList.add(tinmanClass)
+  }
+  
+  // * Add Lion to grid
+  function addLion(position) {
+    cells[position].classList.add(lionClass)
+  }
+  
+  // * Add Scarecrow to grid
+  function addScarecrow(position) {
+    cells[position].classList.add(scarecrowClass)
+  }
+
+  // ! FOREST AREA 
+
+  const forestArea = cellCount 
+  console.log('In the forest area', forestArea)
+
 
   // ! DOROTHY LIVES
 
@@ -438,7 +462,7 @@ function init() {
     clearInterval(timerId)
     removeDorothy(dorothyPosition)
     addDorothy(dorothyPosition = 94)
-    alert(score)
+    alert('You scored ' + score + ' points!')
   }
 
   // ! EVENT LISTENERS
@@ -456,6 +480,8 @@ function init() {
   addHome(homePositionFour)
 
   addTinman(tinmanBonusPosition)
+  addLion(lionBonusPosition)
+  addScarecrow(scarecrowBonusPosition)
 
   addWitch(witchPositionOne)
   addWitch(witchPositionTwo)
