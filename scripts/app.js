@@ -110,14 +110,14 @@ function init() {
         if (horizontalPosition < width - 1) dorothyPosition++
         getBonusPoints()
         hitWitch()
-        checkWaterDanger()
+        // checkWaterDanger()
         break
       case 37: //arrow left
       case 65: //a key
         if (horizontalPosition > 0) dorothyPosition--
         getBonusPoints()
         hitWitch()
-        checkWaterDanger()
+        // checkWaterDanger()
         break
       case 38: //arrow up
       case 87: //w key
@@ -125,14 +125,14 @@ function init() {
         getDorothyHome()
         getBonusPoints()
         hitWitch()
-        checkWaterDanger()
+        // checkWaterDanger()
         break
       case 40: //arrow down
       case 83: //s key
         if (verticalPosition < width - 1) dorothyPosition += width
         getBonusPoints()
         hitWitch()
-        checkWaterDanger()
+        // checkWaterDanger()
         break
       default:
         console.log('INVALID KEY')
@@ -433,7 +433,7 @@ function init() {
       cells[logPositionOne].classList.add(logClass) 
     } 
     // removing from above logic
-    if (cells[dorothyPosition] === cells[logPositionOne]) {
+    if (cells[dorothyPosition + 1] === cells[logPositionOne]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -452,7 +452,7 @@ function init() {
       logPositionTwo = 10
       cells[logPositionTwo].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionTwo]) {
+    if (cells[dorothyPosition + 1] === cells[logPositionTwo]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -471,7 +471,7 @@ function init() {
       logPositionThree = 29
       cells[logPositionThree].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionThree]) {
+    if (cells[dorothyPosition - 1] === cells[logPositionThree]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -491,7 +491,7 @@ function init() {
       logPositionFour = 29
       cells[logPositionFour].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionFour]) {
+    if (cells[dorothyPosition - 1] === cells[logPositionFour]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -510,7 +510,7 @@ function init() {
       logPositionFive = 29
       cells[logPositionFive].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionFive]) {
+    if (cells[dorothyPosition - 1] === cells[logPositionFive]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -529,7 +529,7 @@ function init() {
       logPositionSix = 29
       cells[logPositionSix].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionSix]) {
+    if (cells[dorothyPosition - 1] === cells[logPositionSix]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -548,7 +548,7 @@ function init() {
       logPositionSeven = 30
       cells[logPositionSeven].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionSeven]) {
+    if (cells[dorothyPosition + 1] === cells[logPositionSeven]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -567,7 +567,7 @@ function init() {
       logPositionEight = 30
       cells[logPositionEight].classList.add(logClass) 
     }
-    if (cells[dorothyPosition] === cells[logPositionEight]) {
+    if (cells[dorothyPosition + 1] === cells[logPositionEight]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -586,10 +586,9 @@ function init() {
       logPositionNine = 30
       cells[logPositionNine].classList.add(logClass) 
     } 
-    if (cells[dorothyPosition] === cells[logPositionNine]) {
+    if (cells[dorothyPosition + 1] === cells[logPositionNine]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
-      console.log('here')
       return addDorothy(dorothyPosition)
     }
   }
