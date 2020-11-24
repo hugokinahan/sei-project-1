@@ -180,7 +180,6 @@ function init() {
 
   // How many Dorothy's are safe
   const safeDorothyOne = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(2)')
-
   const safeDorothyTwo = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(3)')
   const safeDorothyThree = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(4)')
   const safeDorothyFour = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(5)')
@@ -202,27 +201,37 @@ function init() {
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
-      return scoreDisplay.innerHTML = score += 100
+      scoreDisplay.innerHTML = score += 100
+      return safeDorothyOne.innerHTML = 'You have returned Dorothy to Home One'
     } if (dorothyPosition === homePositionTwo) {
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
-      return scoreDisplay.innerHTML = score += 100
+      scoreDisplay.innerHTML = score += 100
+      return safeDorothyTwo.innerHTML = 'You have returned Dorothy to Home Two'
     } if (dorothyPosition === homePositionThree) {
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
-      return scoreDisplay.innerHTML = score += 100
+      scoreDisplay.innerHTML = score += 100
+      return safeDorothyThree.innerHTML = 'You have returned Dorothy to Home Three'
     } if (dorothyPosition === homePositionFour) {
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
-      return scoreDisplay.innerHTML = score += 100
+      scoreDisplay.innerHTML = score += 100
+      return safeDorothyFour.innerHTML = 'You have returned Dorothy to Home Four'
     } 
   }
+
+  // ! PLAYER WINS
+
+  // function playerWins() {
+
+  // }
 
   // ! DOROTHY LANDING ON BONUS CHARACTERS
   
