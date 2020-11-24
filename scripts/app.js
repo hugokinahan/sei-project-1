@@ -25,19 +25,6 @@ function init() {
   let witchPositionFour = 80
   let witchPositionFive = 82
 
-  // ! FOREST AREA 
-
-  // const forestArea = cells.slice(50)
-  // console.log(forestArea.length)
-
-  const tinmanClass = 'tinman'
-  const tinmanBonusPosition = Math.floor(Math.random() * cellCount)
-
-  const lionClass = 'lion'
-  const lionBonusPosition = Math.floor(Math.random() * cellCount)
-
-  const scarecrowClass = 'scarecrow'
-  const scarecrowBonusPosition = Math.floor(Math.random() * cellCount)
 
   let score = 0
 
@@ -70,6 +57,31 @@ function init() {
     }
     addDorothy(startingPosition)
   }
+  createGrid(dorothyPosition)
+
+  // ! FOREST AREA 
+
+  const forestArea = cells.slice(50,90)
+  console.log(forestArea.length)
+
+  const tinmanClass = 'tinman'
+  const tinmanBonusPosition = Math.floor(Math.random() * forestArea.length + 50)
+
+  const lionClass = 'lion'
+  const lionBonusPosition = Math.floor(Math.random() * forestArea.length + 50)
+
+  const scarecrowClass = 'scarecrow'
+  const scarecrowBonusPosition = Math.floor(Math.random() * forestArea.length + 50)
+
+  // ! WATER AREA
+
+  const waterArea = cells.slice(10,40)
+  console.log(waterArea.length)
+
+  // function checkWaterDanger() {
+  //   if (dorothyPosition === waterArea)
+  //     return gameOver()
+  // }
 
   // ! DOROTHY
   // * Add Dorothy to grid
@@ -94,22 +106,26 @@ function init() {
       case 68: //d key
         if (horizontalPosition < width - 1) dorothyPosition++
         getBonusPoints()
+        // checkWaterDanger()
         break
       case 37: //arrow left
       case 65: //a key
         if (horizontalPosition > 0) dorothyPosition--
         getBonusPoints()
+        // checkWaterDanger()
         break
       case 38: //arrow up
       case 87: //w key
         if (verticalPosition > 0) dorothyPosition -= width
         getDorothyHome()
         getBonusPoints()
+        // checkWaterDanger()
         break
       case 40: //arrow down
       case 83: //s key
         if (verticalPosition < width - 1) dorothyPosition += width
         getBonusPoints()
+        // checkWaterDanger()
         break
       default:
         console.log('INVALID KEY')
@@ -522,7 +538,7 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp)
 
-  createGrid(dorothyPosition)
+
 
 
   handleDorothyScore()
