@@ -27,14 +27,18 @@ function init() {
 
   let score = 0
 
-  // * Timer variables
+  // * TIMER VARIABLES
   const obstacleTimerId = null
   const timerId = null
 
-  // * SOUNDS
+
+
+
+
+  // ! SOUNDS
   // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
 
-  // * MAKE A GRID
+  // ! MAKE A GRID
 
   function createGrid(startingPosition) {
     for (let i = 0; i < cellCount; i++) {
@@ -108,6 +112,7 @@ function init() {
   const safeDorothyFour = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(5)')
   
   const safeDorothy = [safeDorothyOne, safeDorothyTwo, safeDorothyThree, safeDorothyFour]
+  console.log(safeDorothy)
 
   // ! DOROTHY'S HOME
   // * Add Home to grid
@@ -115,30 +120,30 @@ function init() {
     cells[position].classList.add(homeClass)
   }
 
-  // ? When can this be implemented?
-  // // * Remove Home from the grid
-  // function removeHome(position) {
-  //   cells[position].classList.remove(homeClass)
-  // }
-
   // ! DOROTHY LANDING ON HOME 
   
   const dorothyIsHome = true
   
   function getDorothyHome() {
     if (dorothyPosition === homePositionOne) {
-      console.log(dorothyIsHome)
-      return dorothyIsHome
+      return scoreDisplay.innerHTML = score += 100
+      
     } if (dorothyPosition === homePositionTwo) {
-      console.log(dorothyIsHome)
+      console.log(score += 100)
       return dorothyIsHome
     } if (dorothyPosition === homePositionThree) {
-      console.log(dorothyIsHome)
+      console.log(score += 100)
       return dorothyIsHome
     } if (dorothyPosition === homePositionFour) {
-      console.log(dorothyIsHome)
+      console.log(score += 100)
       return dorothyIsHome
     } 
+  }
+
+  function dorothySafe() {
+    if (dorothyIsHome === true) {
+      addDorothy(dorothyPosition = 94)
+    }
   }
 
 
@@ -233,28 +238,7 @@ function init() {
     }
   }
 
-  // // ! Checking for Witches 
-
-  // function checkWitch() {
-  //   const activeWitchOne = dorothyPosition === witchPositionOne
-  //   console.log(activeWitchOne)
-  //   const activeWitchTwo = dorothyPosition === witchPositionTwo
-  //   console.log(activeWitchTwo)
-  //   const activeWitchThree = dorothyPosition === witchPositionThree
-  //   console.log(activeWitchThree)
-  //   const activeWitchFour = dorothyPosition === witchPositionFour
-  //   console.log(activeWitchFour)
-
-  //   // if (activeWitchOne || activeWitchTwo || activeWitchThree || activeWitchFour) {
-  //   //   loseLife()
-  //   // }
-
-  //   // if (lives <= 0) {
-  //   //   reset()
-  //   // }
-  // }
-
-  // ! Losing a life
+  // ! LOSING A LIFE
 
   function loseLife() {
     removeDorothy()
@@ -440,11 +424,11 @@ function init() {
   // ! SCORING
 
   function handleDorothyScore(event) {
-    if (getDorothyHome === true) {
-      score += 100
-      removeDorothy(event.target.dataset.index)
+    if (dorothyPosition === homePositionOne) {
+      score = score += 100
+      scoreDisplay.innerHTML = score
+      removeDorothy(dorothyPosition = 94)
     }
-    scoreDisplay.textContent = score
   }
   
 
@@ -462,6 +446,9 @@ function init() {
   document.addEventListener('keyup', handleKeyUp)
 
   createGrid(dorothyPosition)
+
+  dorothySafe()
+  handleDorothyScore()
 
   addHome(homePositionOne)
   addHome(homePositionTwo)
@@ -504,7 +491,7 @@ function init() {
     moveLogNine(logPositionNine)
   }, 1000)  
 
-  cells.forEach(cell => cell.addEventListener('keyUp', handleDorothyScore))
+  // cells.forEach(cell => cell.addEventListener('keyUp', handleDorothyScore))
 
   window.addEventListener('keydown', function(event) {
     // space and arrow keys
