@@ -198,10 +198,17 @@ function init() {
     cells[position].classList.add(homeClass)
   }
 
+  // * Remove Home
+  function removeHome(position) {
+    cells[position].classList.remove(homeClass)
+  }
+
+
   // ! DOROTHY LANDING ON HOME 
   
   function getDorothyHome() {
     if (dorothyPosition === homePositionOne) {
+      removeHome(homePositionOne)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
@@ -209,6 +216,7 @@ function init() {
       scoreDisplay.innerHTML = score += 100
       return safeDorothyOne.innerHTML = 'You have returned Dorothy to Home One'
     } if (dorothyPosition === homePositionTwo) {
+      removeHome(homePositionTwo)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
@@ -216,6 +224,7 @@ function init() {
       scoreDisplay.innerHTML = score += 100
       return safeDorothyTwo.innerHTML = 'You have returned Dorothy to Home Two'
     } if (dorothyPosition === homePositionThree) {
+      removeHome(homePositionThree)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
@@ -223,6 +232,7 @@ function init() {
       scoreDisplay.innerHTML = score += 100
       return safeDorothyThree.innerHTML = 'You have returned Dorothy to Home Three'
     } if (dorothyPosition === homePositionFour) {
+      removeHome(homePositionFour)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
@@ -615,6 +625,13 @@ function init() {
 
 
   handleDorothyScore()
+
+  removeHome(homePositionOne)
+  removeHome(homePositionTwo)
+  removeHome(homePositionThree)
+  removeHome(homePositionFour)
+
+
 
   addHome(homePositionOne)
   addHome(homePositionTwo)
