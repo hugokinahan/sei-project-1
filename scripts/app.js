@@ -25,6 +25,11 @@ function init() {
   let witchPositionFour = 80
   let witchPositionFive = 82
 
+  // ! FOREST AREA 
+
+  // const forestArea = cells.slice(50)
+  // console.log(forestArea.length)
+
   const tinmanClass = 'tinman'
   const tinmanBonusPosition = Math.floor(Math.random() * cellCount)
 
@@ -41,11 +46,18 @@ function init() {
   const timerId = null
 
 
-
-
-
   // ! SOUNDS
   // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
+
+  // const donkeySound = new Audio('audio_clips/wow.mp3')
+  // const fionaSound = new Audio('audio_clips/kind.mp3')
+  // const LordF = new Audio('audio_clips/ginger.mp3')
+  // const pussSound = new Audio('audio_clips/annoying.mp3')
+  // const startButtonSound = new Audio('audio_clips/tunnel.mp3') 
+  // const startButtonSound2 = new Audio('audio_clips/what-are-you-doing-in-my-swamp-1.mp3')
+  // const bonusPointsSound = new Audio('audio_clips/Coin-pick-up-sound-effect.mp3')
+  // const doubleJump = new Audio('audio_clips/Boing-sound-effect.mp3')
+  // const gameOver = new Audio('audio_clips/itsallogrenow1.mp3')
 
   // ! MAKE A GRID
 
@@ -81,19 +93,23 @@ function init() {
       case 39: //arrow right
       case 68: //d key
         if (horizontalPosition < width - 1) dorothyPosition++
+        getBonusPoints()
         break
       case 37: //arrow left
       case 65: //a key
         if (horizontalPosition > 0) dorothyPosition--
+        getBonusPoints()
         break
       case 38: //arrow up
       case 87: //w key
         if (verticalPosition > 0) dorothyPosition -= width
         getDorothyHome()
+        getBonusPoints()
         break
       case 40: //arrow down
       case 83: //s key
         if (verticalPosition < width - 1) dorothyPosition += width
+        getBonusPoints()
         break
       default:
         console.log('INVALID KEY')
@@ -108,10 +124,20 @@ function init() {
   function addTinman(position) {
     cells[position].classList.add(tinmanClass)
   }
+
+  // * Remove Tinman from grid
+  function removeTinman(position) {
+    cells[position].classList.remove(tinmanClass)
+  }
   
   // * Add Lion to grid
   function addLion(position) {
     cells[position].classList.add(lionClass)
+  }
+
+  // * Remove Lion from grid
+  function removeLion(position) {
+    cells[position].classList.remove(lionClass)
   }
   
   // * Add Scarecrow to grid
@@ -119,10 +145,10 @@ function init() {
     cells[position].classList.add(scarecrowClass)
   }
 
-  // ! FOREST AREA 
-
-  const forestArea = cellCount 
-  console.log('In the forest area', forestArea)
+  // * Remove Scarecrow from grid
+  function removeScarecrow(position) {
+    cells[position].classList.remove(scarecrowClass)
+  }
 
 
   // ! DOROTHY LIVES
@@ -157,16 +183,43 @@ function init() {
   function getDorothyHome() {
     if (dorothyPosition === homePositionOne) {
       addDorothy(dorothyPosition = 94)
+      addTinman(tinmanBonusPosition)
+      addLion(lionBonusPosition)
+      addScarecrow(scarecrowBonusPosition)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionTwo) {
       addDorothy(dorothyPosition = 94)
+      addTinman(tinmanBonusPosition)
+      addLion(lionBonusPosition)
+      addScarecrow(scarecrowBonusPosition)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionThree) {
       addDorothy(dorothyPosition = 94)
+      addTinman(tinmanBonusPosition)
+      addLion(lionBonusPosition)
+      addScarecrow(scarecrowBonusPosition)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionFour) {
       addDorothy(dorothyPosition = 94)
+      addTinman(tinmanBonusPosition)
+      addLion(lionBonusPosition)
+      addScarecrow(scarecrowBonusPosition)
       return scoreDisplay.innerHTML = score += 100
+    } 
+  }
+
+  // ! DOROTHY LANDING ON BONUS CHARACTERS
+  
+  function getBonusPoints() {
+    if (dorothyPosition === tinmanBonusPosition) {
+      removeTinman(tinmanBonusPosition)
+      return scoreDisplay.innerHTML = score += 50
+    } if (dorothyPosition === lionBonusPosition) {
+      removeLion(lionBonusPosition)
+      return scoreDisplay.innerHTML = score += 50
+    } if (dorothyPosition === scarecrowBonusPosition) {
+      removeScarecrow(scarecrowBonusPosition)
+      return scoreDisplay.innerHTML = score += 50
     } 
   }
 
