@@ -78,6 +78,8 @@ function init() {
   const waterArea = cells.slice(10,40)
   console.log(waterArea)
 
+
+
   // function checkWaterDanger() {
   //   if (dorothyPosition === waterArea)
   //     return gameOver()
@@ -108,14 +110,14 @@ function init() {
         if (horizontalPosition < width - 1) dorothyPosition++
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       case 37: //arrow left
       case 65: //a key
         if (horizontalPosition > 0) dorothyPosition--
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       case 38: //arrow up
       case 87: //w key
@@ -123,14 +125,14 @@ function init() {
         getDorothyHome()
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       case 40: //arrow down
       case 83: //s key
         if (verticalPosition < width - 1) dorothyPosition += width
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       default:
         console.log('INVALID KEY')
@@ -429,7 +431,9 @@ function init() {
       cells[logPositionOne].classList.remove(logClass)
       logPositionOne = 10
       cells[logPositionOne].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionOne]) {
+    } 
+    // removing from above logic
+    if (cells[dorothyPosition] === cells[logPositionOne]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -447,7 +451,8 @@ function init() {
       cells[logPositionTwo].classList.remove(logClass)
       logPositionTwo = 10
       cells[logPositionTwo].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionTwo]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionTwo]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -465,7 +470,8 @@ function init() {
       cells[logPositionThree].classList.remove(logClass)
       logPositionThree = 29
       cells[logPositionThree].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionThree]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionThree]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -484,7 +490,8 @@ function init() {
       cells[logPositionFour].classList.remove(logClass)
       logPositionFour = 29
       cells[logPositionFour].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionFour]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionFour]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -502,7 +509,8 @@ function init() {
       cells[logPositionFive].classList.remove(logClass)
       logPositionFive = 29
       cells[logPositionFive].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionFive]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionFive]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -520,7 +528,8 @@ function init() {
       cells[logPositionSix].classList.remove(logClass)
       logPositionSix = 29
       cells[logPositionSix].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionSix]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionSix]) {
       removeDorothy(dorothyPosition)
       dorothyPosition -= 1
       return addDorothy(dorothyPosition)
@@ -538,7 +547,8 @@ function init() {
       cells[logPositionSeven].classList.remove(logClass)
       logPositionSeven = 30
       cells[logPositionSeven].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionSeven]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionSeven]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -556,7 +566,8 @@ function init() {
       cells[logPositionEight].classList.remove(logClass)
       logPositionEight = 30
       cells[logPositionEight].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionEight]) {
+    }
+    if (cells[dorothyPosition] === cells[logPositionEight]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -574,9 +585,11 @@ function init() {
       cells[logPositionNine].classList.remove(logClass)
       logPositionNine = 30
       cells[logPositionNine].classList.add(logClass) 
-    } else if (cells[dorothyPosition] === cells[logPositionNine]) {
+    } 
+    if (cells[dorothyPosition] === cells[logPositionNine]) {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
+      console.log('here')
       return addDorothy(dorothyPosition)
     }
   }
@@ -584,18 +597,17 @@ function init() {
   // ! DOROTHY IN WATER
 
   // function checkWaterDanger() {
-  //   if (waterArea[dorothyPosition] !== waterArea[logPositionOne] || waterArea[dorothyPosition] !== waterArea[logPositionTwo] || waterArea[dorothyPosition] !== waterArea[logPositionThree] || waterArea[dorothyPosition] !== waterArea[logPositionFour] || waterArea[dorothyPosition] !== waterArea[logPositionFive] || waterArea[dorothyPosition] !== waterArea[logPositionSix] || waterArea[dorothyPosition] !== waterArea[logPositionSeven] || waterArea[dorothyPosition] !== waterArea[logPositionEight] || waterArea[dorothyPosition] !== waterArea[logPositionNine])
-  //     console.log('game over')
-  // }
-  // checkWaterDanger()
-
-  // ! CHECK WITCHES
-
-  // function checkWitches() {
-  //   if (dorothyPosition === witchPositionOne)
+  //   if (waterArea.includes(cells[dorothyPosition])) {
+  //     return loseLife()
+  //   }
   // }
 
-  // checkWitches()
+
+
+
+
+      // if (waterArea[dorothyPosition] !== waterArea[logPositionOne] || waterArea[dorothyPosition] !== waterArea[logPositionTwo] || waterArea[dorothyPosition] !== waterArea[logPositionThree] || waterArea[dorothyPosition] !== waterArea[logPositionFour] || waterArea[dorothyPosition] !== waterArea[logPositionFive] || waterArea[dorothyPosition] !== waterArea[logPositionSix] || waterArea[dorothyPosition] !== waterArea[logPositionSeven] || waterArea[dorothyPosition] !== waterArea[logPositionEight] || waterArea[dorothyPosition] !== waterArea[logPositionNine])
+    //   console.log('game over')
 
   // ! SCORING
 
