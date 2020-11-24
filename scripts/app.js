@@ -110,14 +110,14 @@ function init() {
         if (horizontalPosition < width - 1) dorothyPosition++
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       case 37: //arrow left
       case 65: //a key
         if (horizontalPosition > 0) dorothyPosition--
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       case 38: //arrow up
       case 87: //w key
@@ -125,14 +125,14 @@ function init() {
         getDorothyHome()
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       case 40: //arrow down
       case 83: //s key
         if (verticalPosition < width - 1) dorothyPosition += width
         getBonusPoints()
         hitWitch()
-        // checkWaterDanger()
+        checkWaterDanger()
         break
       default:
         console.log('INVALID KEY')
@@ -595,15 +595,19 @@ function init() {
 
   // ! DOROTHY IN WATER
 
-  // function checkWaterDanger() {
-  //   if (waterArea.includes(cells[dorothyPosition])) {
-  //     return loseLife()
-  //   }
-  // }
 
+  function checkDorothyLog() {
+    if (waterArea.includes(cells[dorothyPosition] === cells[logPositionNine])) {
+      console.log('on a log')
+    } 
+  }
+  checkDorothyLog()
 
-
-
+  function checkWaterDanger() {
+    if (waterArea.includes(cells[dorothyPosition])) {
+      return loseLife()
+    } 
+  }
 
       // if (waterArea[dorothyPosition] !== waterArea[logPositionOne] || waterArea[dorothyPosition] !== waterArea[logPositionTwo] || waterArea[dorothyPosition] !== waterArea[logPositionThree] || waterArea[dorothyPosition] !== waterArea[logPositionFour] || waterArea[dorothyPosition] !== waterArea[logPositionFive] || waterArea[dorothyPosition] !== waterArea[logPositionSix] || waterArea[dorothyPosition] !== waterArea[logPositionSeven] || waterArea[dorothyPosition] !== waterArea[logPositionEight] || waterArea[dorothyPosition] !== waterArea[logPositionNine])
     //   console.log('game over')

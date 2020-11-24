@@ -98,6 +98,10 @@ h1 {
   background-position: center;
 }
 
+.grid div.dorothy.log {
+  background-image: url('../assets/dorothy.png');
+}
+
 body > div.grid-wrapper > div.lives {
   background-color: yellow;
   display: flex;
