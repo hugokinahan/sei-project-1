@@ -25,6 +25,7 @@ body {
   height: 600px;
   width: 600px;
   background-color: ghostwhite;
+  margin-top: -130px;
 }
 
 .grid div {
@@ -94,6 +95,7 @@ body > div.grid-wrapper > div.lives {
   background-color: yellow;
   display: flex;
   flex-direction: column;
+  margin-top: -350px;
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(2) {
