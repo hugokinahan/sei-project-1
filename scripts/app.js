@@ -338,11 +338,11 @@ function init() {
     addDorothy(dorothyPosition = 94)
     setTimeout(wait, 500)
     function wait() {
-      dorothyPosition = 94
       dorothyLives[lives - 1]
       lives--
       if (lives === 0) {
         gameOver()
+        reset()
       }
     }
   }
