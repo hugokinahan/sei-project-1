@@ -124,6 +124,7 @@ function init() {
   
   function getDorothyHome() {
     if (dorothyPosition === homePositionOne) {
+      addDorothy(dorothyPosition = 94)
       return scoreDisplay.innerHTML = score += 100
     } if (dorothyPosition === homePositionTwo) {
       return scoreDisplay.innerHTML = score += 100
