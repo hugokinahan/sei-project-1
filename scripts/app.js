@@ -76,7 +76,7 @@ function init() {
   // ! WATER AREA
 
   const waterArea = cells.slice(10,40)
-  console.log(waterArea.length)
+  console.log(waterArea)
 
   // function checkWaterDanger() {
   //   if (dorothyPosition === waterArea)
@@ -172,9 +172,9 @@ function init() {
   let lives = 3
 
   // * lives dortothy has 
-  const dorothyLifeOne = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(2)')
-  const dorothyLifeTwo = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(3)')
-  const dorothyLifeThree = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(4)')
+  const dorothyLifeOne = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(2) > img')
+  const dorothyLifeTwo = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(3) > img')
+  const dorothyLifeThree = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(4) > img')
 
   const dorothyLives = [dorothyLifeOne, dorothyLifeTwo, dorothyLifeThree]
 
@@ -262,7 +262,7 @@ function init() {
       witchPositionOne = 59
       cells[witchPositionOne].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionOne]) {
-      gameOver()
+      loseLife()
     }
   }
 
@@ -279,7 +279,7 @@ function init() {
       witchPositionTwo = 60
       cells[witchPositionTwo].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
-      gameOver()
+      loseLife()
     }
   }
 
@@ -295,7 +295,7 @@ function init() {
       witchPositionThree = 79
       cells[witchPositionThree].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionThree]) {
-      gameOver()
+      loseLife()
     }
   }
 
@@ -311,7 +311,7 @@ function init() {
       witchPositionFour = 80
       cells[witchPositionFour].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionFour]) {
-      gameOver()
+      loseLife()
     }
   }
 
@@ -327,25 +327,28 @@ function init() {
       witchPositionFive = 80
       cells[witchPositionFive].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionFive]) {
-      gameOver()
+      loseLife()
     }
   }
 
   // ! LOSING A LIFE
 
   function loseLife() {
-    removeDorothy()
-    addDorothy()
+    removeDorothy(dorothyPosition)
+    addDorothy(dorothyPosition = 94)
     setTimeout(wait, 500)
     function wait() {
-      removeDorothy()
+      dorothyPosition = 94
       dorothyLives[lives - 1]
       lives--
-      // dorothyPosition = 94
-      // if (lives === -1) {
-      //   reset()
-      // }
+      if (lives === 0) {
+        gameOver()
+      }
     }
+  }
+
+  function reset() {
+    location.reload()
   }
 
   // ! LOGS CROSSING
@@ -513,6 +516,22 @@ function init() {
       console.log('Dorothy on log')
     }
   }
+
+  // ! DOROTHY IN WATER
+
+  function checkWaterDanger() {
+    if (waterArea[dorothyPosition] !== waterArea[logPositionOne] || waterArea[dorothyPosition] !== waterArea[logPositionTwo] || waterArea[dorothyPosition] !== waterArea[logPositionThree] || waterArea[dorothyPosition] !== waterArea[logPositionFour] || waterArea[dorothyPosition] !== waterArea[logPositionFive] || waterArea[dorothyPosition] !== waterArea[logPositionSix] || waterArea[dorothyPosition] !== waterArea[logPositionSeven] || waterArea[dorothyPosition] !== waterArea[logPositionEight] || waterArea[dorothyPosition] !== waterArea[logPositionNine])
+      console.log('game over')
+  }
+  checkWaterDanger()
+
+  // ! CHECK WITCHES
+
+  // function checkWitches() {
+  //   if (dorothyPosition === witchPositionOne)
+  // }
+
+  // checkWitches()
 
   // ! SCORING
 
