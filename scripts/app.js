@@ -45,15 +45,8 @@ function init() {
   // ! SOUNDS
   // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
 
-  // const donkeySound = new Audio('audio_clips/wow.mp3')
-  // const fionaSound = new Audio('audio_clips/kind.mp3')
-  // const LordF = new Audio('audio_clips/ginger.mp3')
-  // const pussSound = new Audio('audio_clips/annoying.mp3')
-  // const startButtonSound = new Audio('audio_clips/tunnel.mp3') 
-  // const startButtonSound2 = new Audio('audio_clips/what-are-you-doing-in-my-swamp-1.mp3')
-  // const bonusPointsSound = new Audio('audio_clips/Coin-pick-up-sound-effect.mp3')
-  // const doubleJump = new Audio('audio_clips/Boing-sound-effect.mp3')
-  // const gameOver = new Audio('audio_clips/itsallogrenow1.mp3')
+  const homeSound = new Audio('assets/theres-no-place-like-home.wav')
+  const gameOverSound = new Audio('assets/cackle3.wav')
 
   // ! MAKE A GRID
 
@@ -124,7 +117,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        // checkWaterDanger()
+        checkWaterDanger()
         checkHomeAreaDanger()
         break
       case 37: //arrow left
@@ -133,7 +126,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        // checkWaterDanger()
+        checkWaterDanger()
         checkHomeAreaDanger()
         break
       case 38: //arrow up
@@ -143,7 +136,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        // checkWaterDanger()
+        checkWaterDanger()
         checkHomeAreaDanger()
         break
       case 40: //arrow down
@@ -152,7 +145,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        // checkWaterDanger()
+        checkWaterDanger()
         checkHomeAreaDanger()
         break
       default:
@@ -237,6 +230,7 @@ function init() {
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
       scoreDisplay.innerHTML = score += 100
+      homeSound.play()
       return safeDorothyOne.innerHTML = 'You have returned Dorothy to Home One'
     } if (dorothyPosition === homePositionTwo) {
       removeHome(homePositionTwo)
@@ -245,6 +239,7 @@ function init() {
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
       scoreDisplay.innerHTML = score += 100
+      homeSound.play()
       return safeDorothyTwo.innerHTML = 'You have returned Dorothy to Home Two'
     } if (dorothyPosition === homePositionThree) {
       removeHome(homePositionThree)
@@ -253,6 +248,7 @@ function init() {
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
       scoreDisplay.innerHTML = score += 100
+      homeSound.play()
       return safeDorothyThree.innerHTML = 'You have returned Dorothy to Home Three'
     } if (dorothyPosition === homePositionFour) {
       removeHome(homePositionFour)
@@ -261,6 +257,7 @@ function init() {
       addLion(lionBonusPosition)
       addScarecrow(scarecrowBonusPosition)
       scoreDisplay.innerHTML = score += 100
+      homeSound.play()
       return safeDorothyFour.innerHTML = 'You have returned Dorothy to Home Four'
     } 
   }
@@ -733,14 +730,10 @@ function init() {
       cells[logPositionNine].classList.add(logClass) 
     } 
     if (cells[dorothyPosition + 1] === cells[logPositionNine]) {
-      console.log('dorothy on a log')
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
     } 
-    if (waterArea.includes(cells[dorothyPosition] !== cells[logPositionNine])) {
-      return loseLife()
-    }
   }
 
   // ! DOROTHY IN WATER
@@ -748,11 +741,11 @@ function init() {
   // const dorothyIsSafeOnALog = document.querySelectorAll('.grid div.log')
   // console.log(dorothyIsSafeOnALog)
 
-  // function checkWaterDanger() {
-  //   if (waterArea.includes(cells[dorothyPosition] ) ) {
-  //     return loseLife()
-  //   }
-  // }
+  function checkWaterDanger() {
+    if (waterArea.includes(cells[dorothyPosition !== logPositionNine])) {
+      return loseLife()
+    }
+  }
 
   // ! DOROTHY NOT IN WATER IN WATER AREA / DOROTHY ON A LOG
 
