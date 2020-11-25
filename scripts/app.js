@@ -124,7 +124,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        checkWaterDanger()
+        // checkWaterDanger()
         checkHomeAreaDanger()
         break
       case 37: //arrow left
@@ -133,7 +133,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        checkWaterDanger()
+        // checkWaterDanger()
         checkHomeAreaDanger()
         break
       case 38: //arrow up
@@ -143,7 +143,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        checkWaterDanger()
+        // checkWaterDanger()
         checkHomeAreaDanger()
         break
       case 40: //arrow down
@@ -152,7 +152,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         // dorothyOnLog()
-        checkWaterDanger()
+        // checkWaterDanger()
         checkHomeAreaDanger()
         break
       default:
@@ -547,15 +547,16 @@ function init() {
 
   // * LOG VARIABLES 
   const logClass = 'log'
-  let logPositionOne = 10
-  let logPositionTwo = 12
+  let logPositionOne = 15
+  let logPositionTwo = 17
   let logPositionThree = 29
   let logPositionFour = 27
   let logPositionFive = 25
   let logPositionSix = 23
-  let logPositionSeven = 30
-  let logPositionEight = 32
-  let logPositionNine = 34
+  let logPositionSeven = 31
+  let logPositionEight = 33
+  let logPositionNine = 35
+
 
   // * Add Log to grid
   function addLog(position) {
@@ -589,10 +590,10 @@ function init() {
     cells[logPositionTwo].classList.remove(logClass)
     logPositionTwo += 1
     cells[logPositionTwo].classList.add(logClass)
-    // if (logPositionTwo < 12) {
-    //   cells[logPositionTwo].classList.remove(logClass)
-    //   logPositionTwo = 19
-    if (logPositionTwo === 20) {
+    if (logPositionTwo < 11) {
+      cells[logPositionTwo].classList.remove(logClass)
+      logPositionTwo = 19
+    } if (logPositionTwo === 20) {
       cells[logPositionTwo].classList.remove(logClass)
       logPositionTwo = 10
       cells[logPositionTwo].classList.add(logClass) 
@@ -736,6 +737,9 @@ function init() {
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
+    } 
+    if (waterArea.includes(cells[dorothyPosition] !== cells[logPositionNine])) {
+      return loseLife()
     }
   }
 
@@ -744,11 +748,11 @@ function init() {
   // const dorothyIsSafeOnALog = document.querySelectorAll('.grid div.log')
   // console.log(dorothyIsSafeOnALog)
 
-  function checkWaterDanger() {
-    if (waterArea.includes(cells[dorothyPosition] ) ) {
-      return loseLife()
-    }
-  }
+  // function checkWaterDanger() {
+  //   if (waterArea.includes(cells[dorothyPosition] ) ) {
+  //     return loseLife()
+  //   }
+  // }
 
   // ! DOROTHY NOT IN WATER IN WATER AREA / DOROTHY ON A LOG
 
@@ -860,6 +864,7 @@ function init() {
   addLog(logPositionSeven)
   addLog(logPositionEight)
   addLog(logPositionNine)
+
 
   setInterval(function() {
     moveWitchOne(witchPositionOne) 
