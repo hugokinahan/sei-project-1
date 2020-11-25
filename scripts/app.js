@@ -514,6 +514,10 @@ function init() {
       return loseLife()
     } if (cells[dorothyPosition] === cells[witchPositionTen]) {
       return loseLife()
+    } if (cells[dorothyPosition] === cells[witchPositionEleven]) {
+      return loseLife()
+    } if (cells[dorothyPosition] === cells[witchPositionTwelve]) {
+      return loseLife()
     }
   }
 
@@ -606,7 +610,7 @@ function init() {
     cells[logPositionThree].classList.add(logClass)
     if (logPositionThree > 29) {
       cells[logPositionThree].classList.remove(logClass)
-      logPositionThree = 20
+      logPositionThree = 16
     } if (logPositionThree < 20) {
       cells[logPositionThree].classList.remove(logClass)
       logPositionThree = 29
@@ -626,8 +630,8 @@ function init() {
     cells[logPositionFour].classList.add(logClass)
     if (logPositionFour > 29) {
       cells[logPositionFour].classList.remove(logClass)
-      logPositionFour = 20
-    } if (logPositionFour === 20) {
+      logPositionFour = 17
+    } if (logPositionFour < 20) {
       cells[logPositionFour].classList.remove(logClass)
       logPositionFour = 29
       cells[logPositionFour].classList.add(logClass) 
@@ -645,8 +649,8 @@ function init() {
     cells[logPositionFive].classList.add(logClass)
     if (logPositionFive > 29) {
       cells[logPositionFive].classList.remove(logClass)
-      logPositionFive = 20
-    } if (logPositionFive === 20) {
+      logPositionFive = 18
+    } if (logPositionFive < 20) {
       cells[logPositionFive].classList.remove(logClass)
       logPositionFive = 29
       cells[logPositionFive].classList.add(logClass) 
@@ -664,8 +668,8 @@ function init() {
     cells[logPositionSix].classList.add(logClass)
     if (logPositionSix > 29) {
       cells[logPositionSix].classList.remove(logClass)
-      logPositionSix = 20
-    } if (logPositionSix === 20) {
+      logPositionSix = 19
+    } if (logPositionSix < 20) {
       cells[logPositionSix].classList.remove(logClass)
       logPositionSix = 29
       cells[logPositionSix].classList.add(logClass) 
