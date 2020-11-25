@@ -62,7 +62,6 @@ function init() {
   // ! FOREST AREA 
 
   const forestArea = cells.slice(50,90)
-  console.log(forestArea.length)
 
   const tinmanClass = 'tinman'
   const tinmanBonusPosition = Math.floor(Math.random() * forestArea.length + 50)
@@ -78,12 +77,40 @@ function init() {
   const waterArea = cells.slice(10,40)
   console.log(waterArea)
 
+  // ! NOT HOME AREA 
 
+  const homeArea = cells.slice(0,10)
+  console.log(homeArea)
 
-  // function checkWaterDanger() {
-  //   if (dorothyPosition === waterArea)
-  //     return gameOver()
+  function checkHomeAreaDanger() {
+    if (homeArea.includes(cells[dorothyPosition])) {
+      return loseLife()
+    } 
+  }
+  
+  // const notHomeOnZero = 0
+  // const notHomeOnTwo = 2
+  // const notHomeOnFour = 4
+  // const notHomeOnFive = 5
+  // const notHomeOnSeven = 7
+  // const notHomeOnNine = 9
+  
+  // function missedHome() {
+  //   if (dorothyPosition === notHomeOnZero) {
+  //     console.log('dorothy missed') 
+  //   } if (dorothyPosition === notHomeOnTwo) {
+  //     console.log('dorothy missed')
+  //   } if (dorothyPosition === notHomeOnFour) {
+  //     console.log('dorothy missed') 
+  //   } if (dorothyPosition === notHomeOnFive) {
+  //     console.log('dorothy missed')
+  //   } if (dorothyPosition === notHomeOnSeven) {
+  //     console.log('dorothy missed') 
+  //   } if (dorothyPosition === notHomeOnNine) {
+  //     console.log('dorothy missed')
+  //   }
   // }
+
 
   // ! DOROTHY
   // * Add Dorothy to grid
@@ -111,6 +138,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         checkWaterDanger()
+        checkHomeAreaDanger()
         break
       case 37: //arrow left
       case 65: //a key
@@ -118,6 +146,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         checkWaterDanger()
+        checkHomeAreaDanger()
         break
       case 38: //arrow up
       case 87: //w key
@@ -126,6 +155,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         checkWaterDanger()
+        checkHomeAreaDanger()
         break
       case 40: //arrow down
       case 83: //s key
@@ -133,6 +163,7 @@ function init() {
         getBonusPoints()
         hitWitch()
         checkWaterDanger()
+        checkHomeAreaDanger()
         break
       default:
         console.log('INVALID KEY')
@@ -178,7 +209,7 @@ function init() {
 
   let lives = 3
 
-  // * lives dortothy has 
+  // * lives dorothy has 
   const dorothyLifeOne = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(2) > img')
   const dorothyLifeTwo = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(3) > img')
   const dorothyLifeThree = document.querySelector('body > div.grid-wrapper > div.lives > div:nth-child(4) > img')
@@ -243,16 +274,6 @@ function init() {
       return safeDorothyFour.innerHTML = 'You have returned Dorothy to Home Four'
     } 
   }
-
-
-  
-  // // ! PLAYER WINS
-
-  // function playerWins() {
-  //   if (safeDorothyOne.innerHTML === 'You have returned Dorothy to Home One' && safeDorothyTwo.innerHTML === 'You have returned Dorothy to Home Two' && safeDorothyThree === 'You have returned Dorothy to Home Three' && safeDorothyFour === 'You have returned Dorothy to Home Four')
-  //     return gameOver('YOU WON! You scored ' + score + ' points!')
-  // } 
-  // playerWins()
 
   // ! DOROTHY LANDING ON BONUS CHARACTERS
   
@@ -434,6 +455,7 @@ function init() {
     } 
     // removing from above logic
     if (cells[dorothyPosition + 1] === cells[logPositionOne]) {
+      checkWaterDanger(false)
       removeDorothy(dorothyPosition)
       dorothyPosition += 1
       return addDorothy(dorothyPosition)
@@ -595,22 +617,11 @@ function init() {
 
   // ! DOROTHY IN WATER
 
-
-  function checkDorothyLog() {
-    if (waterArea.includes(cells[dorothyPosition] === cells[logPositionNine])) {
-      console.log('on a log')
-    } 
-  }
-  checkDorothyLog()
-
   function checkWaterDanger() {
-    if (waterArea.includes(cells[dorothyPosition])) {
+    if (waterArea.includes(cells[dorothyPosition] === cells[logPositionNine])) {
       return loseLife()
     } 
   }
-
-      // if (waterArea[dorothyPosition] !== waterArea[logPositionOne] || waterArea[dorothyPosition] !== waterArea[logPositionTwo] || waterArea[dorothyPosition] !== waterArea[logPositionThree] || waterArea[dorothyPosition] !== waterArea[logPositionFour] || waterArea[dorothyPosition] !== waterArea[logPositionFive] || waterArea[dorothyPosition] !== waterArea[logPositionSix] || waterArea[dorothyPosition] !== waterArea[logPositionSeven] || waterArea[dorothyPosition] !== waterArea[logPositionEight] || waterArea[dorothyPosition] !== waterArea[logPositionNine])
-    //   console.log('game over')
 
   // ! SCORING
 
@@ -622,6 +633,17 @@ function init() {
     }
   }
   
+  // ! PLAYER WINS / HOUSES REMOVED
+
+  // function playerWins() {
+  //   if (dorothyPosition === homePositionOne) 
+  //     if (dorothyPosition === homePositionTwo)
+  //       if (dorothyPosition === homePositionThree)
+  //         if (dorothyPosition === homePositionFour) {
+  //           return gameOver()
+  //         }
+  // }
+  // playerWins()
 
   // ! GAME OVER
 
@@ -641,12 +663,17 @@ function init() {
 
   handleDorothyScore()
 
+  // missedHome(notHomeOnZero)
+  // missedHome(notHomeOnTwo)
+  // missedHome(notHomeOnFour)
+  // missedHome(notHomeOnFive)
+  // missedHome(notHomeOnSeven)
+  // missedHome(notHomeOnNine)
+
   removeHome(homePositionOne)
   removeHome(homePositionTwo)
   removeHome(homePositionThree)
   removeHome(homePositionFour)
-
-
 
   addHome(homePositionOne)
   addHome(homePositionTwo)
@@ -692,8 +719,6 @@ function init() {
     moveLogEight(logPositionEight)
     moveLogNine(logPositionNine)
   }, 1000)  
-
-  // cells.forEach(cell => cell.addEventListener('keyUp', handleDorothyScore))
 
   window.addEventListener('keydown', function(event) {
     // space and arrow keys
