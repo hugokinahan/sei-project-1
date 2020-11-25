@@ -4,15 +4,23 @@
 
 body {
   background-color: yellow;
+  background-image: url('../assets/wizard-of-oz.jpg');
+  background-size: 100%;
+  background-position: center;
   font-family: 'Lobster Two', cursive;
+  color: gold;
+  font-weight: bold;
 }
 
 h1 {
   text-align: center;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 .controls-wrapper {
   text-align: center;
+  font-size: 22px;
 }
 
 .grid-wrapper {
@@ -33,13 +41,19 @@ h1 {
   width: 600px;
   background-color: ghostwhite;
   margin-top: -130px;
+  opacity: 0.9;
 }
 
 .grid div {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  color: gold;
   flex-grow: 1;
   height: 10%;
   width: 10%;
+}
+
+body > div.grid-wrapper > div.lives > div:nth-child(2) {
+  background-color: none;
 }
 
 .grid div.dorothy {
@@ -103,15 +117,14 @@ h1 {
 }
 
 body > div.grid-wrapper > div.lives {
-  background-color: yellow;
   display: flex;
   flex-direction: column;
-  margin-top: -350px;
+  margin-top: -300px;
   text-align: center;
+  font-size: 20px;
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(2) {
-  background-color: yellow;
   /* background-image: url('../assets/dorothy.png'); */
   /* width: 70px;
   height: 130px; */
@@ -121,7 +134,7 @@ body > div.grid-wrapper > div.lives > div:nth-child(2) {
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(3) {
-  background-color: yellow;
+
   /* background-image: url('../assets/dorothy.png'); */
   /* width: 70px ;
   height: 130px; */
@@ -131,7 +144,7 @@ body > div.grid-wrapper > div.lives > div:nth-child(3) {
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(4) {
-  background-color: yellow;
+
   /* background-image: url('../assets/dorothy.png'); */
   /* width: 70px ;
   height: 130px; */
@@ -156,12 +169,12 @@ body > div.grid-wrapper > div.lives > div:nth-child(4) > img {
 }
 
 body > div.grid-wrapper > div.lives > div.safe-dorothy > p {
-  background-color: yellow;
+
   /* background-image: url('../assets/dorothy.png'); */
 }
 
 body > div.grid-wrapper > div.lives > div.safe-dorothy {
-  background-color: yellow;
+
   display: flex;
   flex-direction: column;
   /* background-image: url('../assets/dorothy.png'); */
@@ -422,18 +435,33 @@ body > div > div > div:nth-child(50) {
 
 /* HOME GRID SQUARES */
 
-body > div > div > div:nth-child(2) {
+/* body > div > div > div:nth-child(2) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
+} */
+body > div.grid-wrapper > div.grid > div:nth-child(2) {
+  background-color: rgb(0, 128, 0);
 }
-body > div > div > div:nth-child(4) {
+
+body > div.grid-wrapper > div.grid > div:nth-child(3) {
+  background-color: rgb(0, 128, 0);
+}
+
+body > div.grid-wrapper > div.grid > div:nth-child(4) {
+  background-color: rgb(0, 128, 0);
+}
+
+body > div.grid-wrapper > div.grid > div:nth-child(7) {
+  background-color: rgb(0, 128, 0);
+}
+/* body > div > div > div:nth-child(4) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
-}
-body > div > div > div:nth-child(7) {
+} */
+/* body > div > div > div:nth-child(7) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
-}
+} */
 body > div > div > div:nth-child(9) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
@@ -445,10 +473,10 @@ body > div > div > div:nth-child(1) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
 }
-body > div > div > div:nth-child(3) {
+/* body > div > div > div:nth-child(3) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
-}
+} */
 body > div > div > div:nth-child(5) {
   background-color: rgb(0, 128, 0);
   background-size: 350%;
