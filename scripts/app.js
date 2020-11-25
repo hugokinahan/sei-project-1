@@ -21,12 +21,15 @@ function init() {
   const witchClass = 'witch'
   let witchPositionOne = 59
   let witchPositionTwo = 60
+  let witchPositionEight = 62
+  let witchPositionNine = 64
+  let witchPositionTen = 66
   let witchPositionThree = 79
   let witchPositionFour = 80
   let witchPositionFive = 82
   let witchPositionSix = 84
   let witchPositionSeven = 86
-  let witchPositionEight = 77
+  
 
 
 
@@ -309,12 +312,60 @@ function init() {
     cells[witchPositionTwo].classList.add(witchClass)
     if (witchPositionTwo < 61) {
       cells[witchPositionTwo].classList.remove(witchClass)
-      witchPositionTwo = 69
+      witchPositionTwo = 66
     } if (witchPositionTwo === 70) {
       cells[witchPositionTwo].classList.remove(witchClass)
       witchPositionTwo = 60
       cells[witchPositionTwo].classList.add(witchClass) 
     } else if (cells[dorothyPosition] === cells[witchPositionTwo]) {
+      loseLife()
+    }
+  }
+
+  function moveWitchEight() {
+    cells[witchPositionEight].classList.remove(witchClass)
+    witchPositionEight += 1
+    cells[witchPositionEight].classList.add(witchClass)
+    if (witchPositionEight < 61) {
+      cells[witchPositionEight].classList.remove(witchClass)
+      witchPositionEight = 67
+    } if (witchPositionEight === 70) {
+      cells[witchPositionEight].classList.remove(witchClass)
+      witchPositionEight = 60
+      cells[witchPositionEight].classList.add(witchClass) 
+    } else if (cells[dorothyPosition] === cells[witchPositionEight]) {
+      loseLife()
+    }
+  }
+
+  function moveWitchNine() {
+    cells[witchPositionNine].classList.remove(witchClass)
+    witchPositionNine += 1
+    cells[witchPositionNine].classList.add(witchClass)
+    if (witchPositionNine < 61) {
+      cells[witchPositionNine].classList.remove(witchClass)
+      witchPositionNine = 68
+    } if (witchPositionNine === 70) {
+      cells[witchPositionNine].classList.remove(witchClass)
+      witchPositionNine = 60
+      cells[witchPositionNine].classList.add(witchClass) 
+    } else if (cells[dorothyPosition] === cells[witchPositionNine]) {
+      loseLife()
+    }
+  }
+
+  function moveWitchTen() {
+    cells[witchPositionTen].classList.remove(witchClass)
+    witchPositionTen += 1
+    cells[witchPositionTen].classList.add(witchClass)
+    if (witchPositionTen < 61) {
+      cells[witchPositionTen].classList.remove(witchClass)
+      witchPositionTen = 69
+    } if (witchPositionTen === 70) {
+      cells[witchPositionTen].classList.remove(witchClass)
+      witchPositionTen = 60
+      cells[witchPositionTen].classList.add(witchClass) 
+    } else if (cells[dorothyPosition] === cells[witchPositionTen]) {
       loseLife()
     }
   }
@@ -325,7 +376,7 @@ function init() {
     cells[witchPositionThree].classList.add(witchClass)
     if (witchPositionThree > 79) {
       cells[witchPositionThree].classList.remove(witchClass)
-      witchPositionThree = 71
+      witchPositionThree = 73
     } if (witchPositionThree < 70) {
       cells[witchPositionThree].classList.remove(witchClass)
       witchPositionThree = 79
@@ -335,21 +386,6 @@ function init() {
     }
   }
 
-  function moveWitchEight() {
-    cells[witchPositionEight].classList.remove(witchClass)
-    witchPositionEight -= 1
-    cells[witchPositionEight].classList.add(witchClass)
-    if (witchPositionEight > 79) {
-      cells[witchPositionEight].classList.remove(witchClass)
-      witchPositionEight = 70
-    } if (witchPositionEight < 70) {
-      cells[witchPositionEight].classList.remove(witchClass)
-      witchPositionEight = 79
-      cells[witchPositionEight].classList.add(witchClass) 
-    } else if (cells[dorothyPosition] === cells[witchPositionEight]) {
-      loseLife()
-    }
-  }
 
   function moveWitchFour() {
     cells[witchPositionFour].classList.remove(witchClass)
@@ -767,6 +803,8 @@ function init() {
   addWitch(witchPositionSix)
   addWitch(witchPositionSeven)
   addWitch(witchPositionEight)
+  addWitch(witchPositionNine)
+  addWitch(witchPositionTen)
 
   addLog(logPositionOne)
   addLog(logPositionTwo)
@@ -787,6 +825,8 @@ function init() {
     moveWitchSix(witchPositionSix)
     moveWitchSeven(witchPositionSeven)
     moveWitchEight(witchPositionEight)
+    moveWitchNine(witchPositionNine)
+    moveWitchTen(witchPositionTen)
   }, 1000)
 
   setInterval(function() {
