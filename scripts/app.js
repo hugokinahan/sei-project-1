@@ -5,6 +5,7 @@ function init() {
   const grid = document.querySelector('.grid')
   const cells = []
   const scoreDisplay = document.querySelector('#score-display')
+  const timerDisplay = document.querySelector('#timer-display')
   
   const width = 10
   const cellCount = width * width
@@ -42,8 +43,23 @@ function init() {
   let score = 0
 
   // * TIMER VARIABLES
-  const obstacleTimerId = null
-  const timerId = null
+  // const timerId = 0
+
+  function startTimer() {
+    let timerId = null
+    let count = 60
+
+    timerId = setInterval(() => {
+      timerDisplay.innerHTML = count--
+      if (count === -2) {
+        playerWinsSound.play()
+        reset()
+        return alert('Time is up! You scored ' + score + ' points!')
+      }
+    }, 1000)
+  }
+  startTimer()
+
 
 
   // ! SOUNDS
@@ -229,6 +245,7 @@ function init() {
   function getDorothyHome() {
     if (dorothyPosition === homePositionOne) {
       removeHome(homePositionOne)
+      addDorothy(dorothyPosition = 1)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
       addLion(lionBonusPosition)
@@ -237,6 +254,7 @@ function init() {
       homeSound.play()
       return safeDorothyOne.innerHTML = 'You have returned Dorothy to Home One'
     } if (dorothyPosition === homePositionTwo) {
+      addDorothy(dorothyPosition = 3)
       removeHome(homePositionTwo)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
@@ -246,6 +264,7 @@ function init() {
       homeSound.play()
       return safeDorothyTwo.innerHTML = 'You have returned Dorothy to Home Two'
     } if (dorothyPosition === homePositionThree) {
+      addDorothy(dorothyPosition = 6)
       removeHome(homePositionThree)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
@@ -255,6 +274,7 @@ function init() {
       homeSound.play()
       return safeDorothyThree.innerHTML = 'You have returned Dorothy to Home Three'
     } if (dorothyPosition === homePositionFour) {
+      addDorothy(dorothyPosition = 8)
       removeHome(homePositionFour)
       addDorothy(dorothyPosition = 94)
       addTinman(tinmanBonusPosition)
@@ -775,11 +795,11 @@ function init() {
 
   // ! DOROTHY REACHING THE EDGE 
 
-  function dorothyOnEdge() {
-    if (waterArea.includes(cells[dorothyPosition] === width - 1))
-      console.log('I am dead on edge')
-  }
-  dorothyOnEdge()
+  // function dorothyOnEdge() {
+  //   if (waterArea.includes(cells[dorothyPosition] === width - 1))
+  //     console.log('I am dead on edge')
+  // }
+  // dorothyOnEdge()
 
   // ! SCORING
 
@@ -795,7 +815,7 @@ function init() {
   // ! PLAYER WINS / HOUSES REMOVED
 
   // function playerWins() {
-  //   if (score > 1500) {
+  //   if (homeArea.includes(dorothyClass === 1 && dorothyClass === 3 && dorothyClass === 6 && dorothyClass === 8)) {
   //     playerWinsSound.play()
   //     alert('You won! You scored ' + score + ' points!')
   //   } 
@@ -807,16 +827,15 @@ function init() {
 
   function gameOver() {
     gameOverSound.play()
-    clearInterval(timerId)
+    clearInterval()
     removeDorothy(dorothyPosition)
     addDorothy(dorothyPosition = 94)
-    alert('You scored ' + score + ' points!')
+    return alert('You scored ' + score + ' points!')
   }
 
   // ! EVENT LISTENERS
 
   document.addEventListener('keyup', handleKeyUp)
-
 
 
 
