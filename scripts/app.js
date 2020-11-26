@@ -6,6 +6,7 @@ function init() {
   const cells = []
   const scoreDisplay = document.querySelector('#score-display')
   const timerDisplay = document.querySelector('#timer-display')
+  const startButton = document.querySelector('button')
   
   const width = 10
   const cellCount = width * width
@@ -58,10 +59,13 @@ function init() {
       }
     }, 1000)
   }
-  startTimer()
 
+  // ! START BUTTON 
 
-
+  function startGame() {
+    startTimer()
+    playerWinsSound.play()
+  }
 
   // ! SOUNDS
   // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
@@ -841,7 +845,7 @@ function init() {
   // ! EVENT LISTENERS
 
   document.addEventListener('keyup', handleKeyUp)
-
+  startButton.addEventListener('click', startGame)
 
 
   handleDorothyScore()

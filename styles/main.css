@@ -59,7 +59,6 @@ h1 {
 }
 
 .grid div {
-  /* border: 1px solid rgba(0, 0, 0, 0.2); */
   color: gold;
   flex-grow: 1;
   height: 10%;
@@ -152,29 +151,18 @@ body > div.grid-wrapper > div.lives {
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(2) {
-  /* background-image: url('../assets/dorothy.png'); */
-  /* width: 70px;
-  height: 130px; */
   background-position: center;
   background-size: cover;
   margin: 10px;
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(3) {
-
-  /* background-image: url('../assets/dorothy.png'); */
-  /* width: 70px ;
-  height: 130px; */
   background-position: center;
   background-size: cover;
   margin: 10px;
 }
 
 body > div.grid-wrapper > div.lives > div:nth-child(4) {
-
-  /* background-image: url('../assets/dorothy.png'); */
-  /* width: 70px ;
-  height: 130px; */
   background-position: center;
   background-size: cover;
   margin: 10px;
