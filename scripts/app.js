@@ -58,6 +58,7 @@ function init() {
       }
     }, 1000)
   }
+  startTimer()
 
 
 
@@ -174,7 +175,6 @@ function init() {
     }
 
     addDorothy(dorothyPosition)
-    startTimer()
   }
 
   // ! ADDING BONUS CHARACTERS
