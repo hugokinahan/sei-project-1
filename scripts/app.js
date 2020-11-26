@@ -1,7 +1,7 @@
 function init() {
 
   // ! VARIABLES
-  // * DOM VARIABLES
+  
   const grid = document.querySelector('.grid')
   const cells = []
   const scoreDisplay = document.querySelector('#score-display')
@@ -20,10 +20,6 @@ function init() {
   const homePositionThree = 6
   const homePositionFour = 8
 
-
-
-  
-
   const witchClass = 'witch'
   let witchPositionOne = 59
   let witchPositionTwelve = 57
@@ -37,14 +33,10 @@ function init() {
   let witchPositionFive = 82
   let witchPositionSix = 84
   let witchPositionSeven = 86
-  
-
-
 
   let score = 0
 
-  // * TIMER VARIABLES
-  // const timerId = 0
+  // ! TIMER 
 
   function startTimer() {
     let timerId = null
@@ -68,7 +60,6 @@ function init() {
   }
 
   // ! SOUNDS
-  // * Background sound of yellow brick road and home sounds of theres no place like home. // * Maybe a witches cackle too if there is time
 
   const homeSound = new Audio('assets/theres-no-place-like-home.wav')
   const gameOverSound = new Audio('assets/cackle3.wav')
@@ -104,19 +95,16 @@ function init() {
   // ! WATER AREA
 
   const waterArea = cells.slice(10,40)
-  console.log(waterArea)
 
-  // ! NOT HOME AREA 
+  // ! HOME AREA 
 
   const homeArea = cells.slice(0,10)
-  console.log(homeArea)
 
   function checkHomeAreaDanger() {
     if (homeArea.includes(cells[dorothyPosition])) {
       return loseLife()
     } 
   }
-
 
   // ! DOROTHY
   // * Add Dorothy to grid
@@ -231,8 +219,6 @@ function init() {
   const safeDorothyThree = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(4)')
   const safeDorothyFour = document.querySelector('body > div.grid-wrapper > div.lives > div.safe-dorothy > div:nth-child(5)')
   
-  const safeDorothy = [safeDorothyOne, safeDorothyTwo, safeDorothyThree, safeDorothyFour]
-  console.log(safeDorothy)
 
   // ! DOROTHY'S HOME
   // * Add Home to grid
@@ -516,11 +502,6 @@ function init() {
     }
   }
 
-
-
-
-  
-
   // ! HIT WITCH 
 
   function hitWitch() {
@@ -575,7 +556,6 @@ function init() {
 
   // ! LOGS CROSSING
 
-  // * LOG VARIABLES 
   const logClass = 'log'
   const logPositionOne = {
     position: 15
@@ -791,7 +771,6 @@ function init() {
   // ! DOROTHY IN WATER
 
   function checkWaterDanger() {
-    console.log(logs.map(item => item.position), dorothyPosition)
     if (waterArea.includes(cells[dorothyPosition] ) ) {
       if (logs.map(item => item.position).includes(dorothyPosition)) {
         console.log('I have arrived on a Log and I am happy and safe')
@@ -802,14 +781,6 @@ function init() {
     }
   }
 
-  // ! DOROTHY REACHING THE EDGE 
-
-  // function dorothyOnEdge() {
-  //   if (waterArea.includes(cells[dorothyPosition] === width - 1))
-  //     console.log('I am dead on edge')
-  // }
-  // dorothyOnEdge()
-
   // ! SCORING
 
   function handleDorothyScore() {
@@ -819,18 +790,6 @@ function init() {
       removeDorothy(dorothyPosition = 94)
     }
   }
-  console.log(homePositionOne)
-
-  // ! PLAYER WINS / HOUSES REMOVED
-
-  // function playerWins() {
-  //   if (homeArea.includes(dorothyClass === 1 && dorothyClass === 3 && dorothyClass === 6 && dorothyClass === 8)) {
-  //     playerWinsSound.play()
-  //     alert('You won! You scored ' + score + ' points!')
-  //   } 
-  // }
-  // playerWins()
-
 
   // ! GAME OVER
 
