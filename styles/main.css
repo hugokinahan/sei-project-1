@@ -116,6 +116,18 @@ body > div.grid-wrapper > div.lives > div:nth-child(2) {
   background-image: url('../assets/dorothy.png');
 }
 
+.grid div.lion.witch {
+  background-image: url('../assets/wicked-witch.png');
+}
+
+.grid div.scarecrow.witch {
+  background-image: url('../assets/wicked-witch.png');
+}
+
+.grid div.tinman.witch {
+  background-image: url('../assets/wicked-witch.png');
+}
+
 body > div.grid-wrapper > div.lives {
   display: flex;
   flex-direction: column;

@@ -18,6 +18,10 @@ function init() {
   const homePositionThree = 6
   const homePositionFour = 8
 
+
+
+  
+
   const witchClass = 'witch'
   let witchPositionOne = 59
   let witchPositionTwelve = 57
@@ -47,6 +51,7 @@ function init() {
 
   const homeSound = new Audio('assets/theres-no-place-like-home.wav')
   const gameOverSound = new Audio('assets/cackle3.wav')
+  const playerWinsSound = new Audio('assets/follow-the-yellow-brick-road-follow-the-yellow-brick-road-follow-follow-follow-follow-follow-the-yellow-brick-road.wav')
 
   // ! MAKE A GRID
 
@@ -768,6 +773,13 @@ function init() {
     }
   }
 
+  // ! DOROTHY REACHING THE EDGE 
+
+  function dorothyOnEdge() {
+    if (waterArea.includes(cells[dorothyPosition] === width - 1))
+      console.log('I am dead on edge')
+  }
+  dorothyOnEdge()
 
   // ! SCORING
 
@@ -778,18 +790,18 @@ function init() {
       removeDorothy(dorothyPosition = 94)
     }
   }
-  
+  console.log(homePositionOne)
+
   // ! PLAYER WINS / HOUSES REMOVED
 
   // function playerWins() {
-  //   if (dorothyPosition === homePositionOne) 
-  //     if (dorothyPosition === homePositionTwo)
-  //       if (dorothyPosition === homePositionThree)
-  //         if (dorothyPosition === homePositionFour) {
-  //           return gameOver()
-  //         }
+  //   if (score > 1500) {
+  //     playerWinsSound.play()
+  //     alert('You won! You scored ' + score + ' points!')
+  //   } 
   // }
   // playerWins()
+
 
   // ! GAME OVER
 
