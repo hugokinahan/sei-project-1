@@ -28,6 +28,18 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+}
+
+.instructions {
+  border: 5px solid gold;
+  width: 250px;
+  text-align: center;
+  font-size: 22px;
+  margin-right: 100px;
+  margin-bottom: 200px;
+  margin-left: 80px;
+  background-color: rgba(0, 100, 0, 0.9);
 }
 
 .grid {
@@ -40,7 +52,7 @@ h1 {
   height: 600px;
   width: 600px;
   background-color: ghostwhite;
-  margin-top: -130px;
+  margin-top: -210px;
   opacity: 0.9;
 }
 
@@ -131,6 +143,7 @@ body > div.grid-wrapper > div.lives > div:nth-child(2) {
 body > div.grid-wrapper > div.lives {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   margin-top: -300px;
   text-align: center;
   font-size: 20px;
@@ -180,9 +193,9 @@ body > div.grid-wrapper > div.lives > div:nth-child(4) > img {
   border-radius: 50px;
 }
 
-body > div.grid-wrapper > div.lives > div.safe-dorothy > p {
-
-  /* background-image: url('../assets/dorothy.png'); */
+body > div.grid-wrapper > div.lives > p {
+  border: 5px solid gold;
+  width: 25px;
 }
 
 body > div.grid-wrapper > div.lives > div.safe-dorothy {
