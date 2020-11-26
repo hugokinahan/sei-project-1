@@ -835,7 +835,7 @@ function init() {
     clearInterval()
     removeDorothy(dorothyPosition)
     addDorothy(dorothyPosition = 94)
-    return alert('You scored ' + score + ' points!')
+    return alert('You lost! :( You scored ' + score + ' points!')
   }
 
   // ! EVENT LISTENERS
