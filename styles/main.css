@@ -195,8 +195,21 @@ body > div.grid-wrapper > div.lives > div:nth-child(4) > img {
 
 body > div.grid-wrapper > div.lives > p {
   border: 5px solid gold;
-  width: 25px;
+  background-color: rgba(0, 100, 0, 0.7);
+  border-radius: 8px;
+  width: 115px;
+  margin-left: 150px;
+  padding: 5px;
 }
+body > div.grid-wrapper > div.lives > div.safe-dorothy > p {
+  border: 5px solid gold;
+  background-color: rgba(0, 100, 0, 0.7);
+  border-radius: 8px;
+  width: 115px;
+  margin-left: 150px;
+  padding: 5px;
+}
+
 
 body > div.grid-wrapper > div.lives > div.safe-dorothy {
 
