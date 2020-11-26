@@ -40,6 +40,7 @@ h1 {
   margin-bottom: 200px;
   margin-left: 80px;
   background-color: rgba(0, 100, 0, 0.9);
+  border-radius: 8px;
 }
 
 .grid {
