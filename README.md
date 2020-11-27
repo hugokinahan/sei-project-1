@@ -6,6 +6,8 @@ Design a grid-based game using HTML, CSS, and JavaScript learnt in the first thr
 
 # Deployment
 
+Please follow th elink to play my game: https://hugokinahan.github.io/sei-project-1/
+
 # Motivation
 
 This project was my first ever JavaScript project, so replicating a relatively staright-forward classic arcade game like 'frogger' would be a good place to start. I chose The Wizard Of Oz as a theme as I believe it reflected a similar story line to that of 'frogger' with Dorothy trying to make it home akin to the frog attempting to make it back to its lilypad. With Dorothy under threat from the Wicked Witch of the West, the aim of the game is to make it across the Wicked Witch's forest and cross the river to bring Dorothy home. 'There's no place like home...'. Along the way you can pick up trusty companions, the Scarecrow, Tinman and the Lion to help build your score. 
