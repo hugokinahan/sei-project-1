@@ -41,7 +41,7 @@ function init() {
   function startTimer() {
     let timerId = null
     let count = 60
-
+    startButton.remove()
     timerId = setInterval(() => {
       timerDisplay.innerHTML = count--
       if (count === -2) {
@@ -83,6 +83,7 @@ function init() {
       moveLogNine(logPositionNine)
     }, 1000)  
   }
+
 
   // ! SOUNDS
 
