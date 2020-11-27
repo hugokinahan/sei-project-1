@@ -57,6 +57,31 @@ function init() {
   function startGame() {
     startTimer()
     playerWinsSound.play()
+    setInterval(function() {
+      moveWitchOne(witchPositionOne) 
+      moveWitchTwo(witchPositionTwo)
+      moveWitchThree(witchPositionThree)
+      moveWitchFour(witchPositionFour)
+      moveWitchFive(witchPositionFive)
+      moveWitchSix(witchPositionSix)
+      moveWitchSeven(witchPositionSeven)
+      moveWitchEight(witchPositionEight)
+      moveWitchNine(witchPositionNine)
+      moveWitchTen(witchPositionTen)
+      moveWitchEleven(witchPositionEleven)
+      moveWitchTwelve(witchPositionTwelve)
+    }, 1000)
+    setInterval(function() {
+      moveLogOne(logPositionOne) 
+      moveLogTwo(logPositionTwo)
+      moveLogThree(logPositionThree)
+      moveLogFour(logPositionFour)
+      moveLogFive(logPositionFive)
+      moveLogSix(logPositionSix)
+      moveLogSeven(logPositionSeven)
+      moveLogEight(logPositionEight)
+      moveLogNine(logPositionNine)
+    }, 1000)  
   }
 
   // ! SOUNDS
@@ -846,34 +871,6 @@ function init() {
   addLog(logPositionSeven.position)
   addLog(logPositionEight.position)
   addLog(logPositionNine.position)
-
-
-  setInterval(function() {
-    moveWitchOne(witchPositionOne) 
-    moveWitchTwo(witchPositionTwo)
-    moveWitchThree(witchPositionThree)
-    moveWitchFour(witchPositionFour)
-    moveWitchFive(witchPositionFive)
-    moveWitchSix(witchPositionSix)
-    moveWitchSeven(witchPositionSeven)
-    moveWitchEight(witchPositionEight)
-    moveWitchNine(witchPositionNine)
-    moveWitchTen(witchPositionTen)
-    moveWitchEleven(witchPositionEleven)
-    moveWitchTwelve(witchPositionTwelve)
-  }, 1000)
-
-  setInterval(function() {
-    moveLogOne(logPositionOne) 
-    moveLogTwo(logPositionTwo)
-    moveLogThree(logPositionThree)
-    moveLogFour(logPositionFour)
-    moveLogFive(logPositionFive)
-    moveLogSix(logPositionSix)
-    moveLogSeven(logPositionSeven)
-    moveLogEight(logPositionEight)
-    moveLogNine(logPositionNine)
-  }, 1000)  
 
   window.addEventListener('keydown', function(event) {
     // space and arrow keys
