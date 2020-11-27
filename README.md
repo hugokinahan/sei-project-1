@@ -174,6 +174,11 @@ function handleKeyUp(event) {
 
 # Future Features
 
+If I had more time with my project there would be a number of features that I would have liked to have the opportunity to add:
 
-
-
+- Create different difficulty levels 
+- Add a high score board using localStorage
+- Created a two player mode on the same computer, where players take turns
+- I would have liked to create a smoother and more seamless movement for my obstacles through CSS animation 
+- Make it mobile friendly 
+- I would have had a deeper look at refactoring my code 
