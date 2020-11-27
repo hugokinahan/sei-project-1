@@ -87,11 +87,11 @@ function init() {
 
   // ! SOUNDS
 
-  const homeSound = new Audio('assets/theres-no-place-like-home.wav')
-  const gameOverSound = new Audio('assets/cackle3.wav')
-  const playerWinsSound = new Audio('assets/follow-the-yellow-brick-road-follow-the-yellow-brick-road-follow-follow-follow-follow-follow-the-yellow-brick-road.wav')
-  const bonusSound = new Audio('assets/classic-bonus-points-02-sound-effect-18362427.mp3')
-  const waterSound = new Audio('assets/Video_Game_Splash-Ploor-699235037.wav')
+  const homeSound = new Audio('./assets/theres-no-place-like-home.wav')
+  const gameOverSound = new Audio('./assets/cackle3.wav')
+  const playerWinsSound = new Audio('./assets/follow-the-yellow-brick-road-follow-the-yellow-brick-road-follow-follow-follow-follow-follow-the-yellow-brick-road.wav')
+  const bonusSound = new Audio('./assets/classic-bonus-points-02-sound-effect-18362427.mp3')
+  const waterSound = new Audio('./assets/Video_Game_Splash-Ploor-699235037.wav')
 
   // ! MAKE A GRID
 
