@@ -83,7 +83,94 @@ if (waterArea.includes(cells[dorothyPosition] ) ) {
 
 # Wins
 
+There were many aspects of the game that I was proud of including the construction of the grid and the implementation of audio throughout the game. However, the area I am most pleased with is the hitWitch function. 
 
+The hitWitch function was used to detect whether the player had collided with any of the twelve witches within the forestArea of the grid. If a collision was detected then the player would lose one of their three lives. If all three were lost the player would lose the game. I then applied this function to each of the keyUp listeners on each key code of the up, down, left and right button. 
+
+```  // ! HIT WITCH 
+
+function hitWitch() {
+  if (cells[dorothyPosition] === cells[witchPositionOne]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionTwo]) {
+    return loseLife() 
+  } if (cells[dorothyPosition] === cells[witchPositionThree]) {
+    return loseLife() 
+  } if (cells[dorothyPosition] === cells[witchPositionFour]) {
+    return loseLife() 
+  } if (cells[dorothyPosition] === cells[witchPositionFive]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionSix]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionSeven]) {
+    return loseLife() 
+  } if (cells[dorothyPosition] === cells[witchPositionEight]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionNine]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionTen]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionEleven]) {
+    return loseLife()
+  } if (cells[dorothyPosition] === cells[witchPositionTwelve]) {
+    return loseLife()
+  }
+}
+```
+
+```
+// * Move Dorothy
+function handleKeyUp(event) {
+  removeDorothy(dorothyPosition)
+  scoreDisplay.innerHTML = score += 10
+
+  const horizontalPosition = dorothyPosition % width
+  const verticalPosition = Math.floor(dorothyPosition / width)
+
+  switch (event.keyCode) {
+    case 39: //arrow right
+    case 68: //d key
+      if (horizontalPosition < width - 1) dorothyPosition++
+      getBonusPoints()
+      hitWitch()
+      
+      checkWaterDanger()
+      checkHomeAreaDanger()
+      break
+    case 37: //arrow left
+    case 65: //a key
+      if (horizontalPosition > 0) dorothyPosition--
+      getBonusPoints()
+      hitWitch()
+      
+      checkWaterDanger()
+      checkHomeAreaDanger()
+      break
+    case 38: //arrow up
+    case 87: //w key
+      if (verticalPosition > 0) dorothyPosition -= width
+      getDorothyHome()
+      getBonusPoints()
+      hitWitch()
+    
+      checkWaterDanger()
+      checkHomeAreaDanger()
+      break
+    case 40: //arrow down
+    case 83: //s key
+      if (verticalPosition < width - 1) dorothyPosition += width
+      getBonusPoints()
+      hitWitch()
+      checkWaterDanger()
+      checkHomeAreaDanger()
+      break
+    default:
+      console.log('INVALID KEY')
+  }
+
+  addDorothy(dorothyPosition)
+}
+```
 
 # Future Features
 
