@@ -1,5 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: Vanilla JavaScript Grid Based Game
-
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: Follow The Yellow Brick Road
 # Brief
 
 Design a grid-based game using HTML, CSS, and JavaScript learnt in the first three weeks of the course. The game should be playable for one player and the player must be able to win and lose. Timeframe: 1 week. 
