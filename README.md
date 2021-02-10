@@ -1,4 +1,4 @@
-# sei-project-1: Vanilla JavaScript Grid Based Game
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: Vanilla JavaScript Grid Based Game
 
 # Brief
 
@@ -18,6 +18,17 @@ MVP took four days to reach, and after I was happy with the functionality of the
 
 # Screenshots
 
+MVP 
+![MVP](mvp.png)
+
+Grid
+![Game Grid](grid.png)
+
+Scoring Added
+![Scoring Added](scoring.png)
+
+Completed Game
+![Completed Game](finished.png)
 
 # Frameworks used
 
