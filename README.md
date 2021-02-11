@@ -13,7 +13,7 @@ This project was my first ever JavaScript project, so replicating a relatively s
 
 # Features
 
-MVP took four days to reach, and after I was happy with the functionality of the game I decided to move on to some bous features. Most notably the player is able to collect an extra 50 bonus points by collecting other characters mentioned above. These reset everytime Dorothy accomplishes her mission of reaching the other side. I also added a timer and a scoreboard to put some pressure on the player and to make the game a little more difficult. The very last thing to add was some audio to boost  the overall experience of the game.
+MVP took four days to reach, and after I was happy with the functionality of the game I decided to move on to some bonus features. Most notably the player is able to collect an extra 50 bonus points by collecting other characters mentioned above. These reset everytime Dorothy accomplishes her mission of reaching the other side. I also added a timer and a scoreboard to put some pressure on the player and to make the game a little more difficult. The very last thing to add was some audio to boost the overall experience of the game.
 
 # Screenshots
 
