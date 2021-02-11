@@ -18,15 +18,19 @@ MVP took four days to reach, and after I was happy with the functionality of the
 # Screenshots
 
 MVP 
+
 ![MVP](mvp.png)
 
 Grid
+
 ![Game Grid](grid.png)
 
 Scoring Added
+
 ![Scoring Added](scoring.png)
 
 Completed Game
+
 ![Completed Game](finished.png)
 
 # Frameworks used
