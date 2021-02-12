@@ -9,11 +9,74 @@ Please follow th elink to play my game: https://hugokinahan.github.io/sei-projec
 
 # Motivation
 
-This project was my first ever JavaScript project, so replicating a relatively staright-forward classic arcade game like 'frogger' would be a good place to start. I chose The Wizard Of Oz as a theme as I believe it reflected a similar story line to that of 'frogger' with Dorothy trying to make it home akin to the frog attempting to make it back to its lilypad. With Dorothy under threat from the Wicked Witch of the West, the aim of the game is to make it across the Wicked Witch's forest and cross the river to bring Dorothy home. 'There's no place like home...'. Along the way you can pick up trusty companions, the Scarecrow, Tinman and the Lion to help build your score. 
+This project was my first ever JavaScript project, so replicating a relatively staright-forward classic arcade game like 'frogger' would be a good place to start. I chose The Wizard Of Oz as a theme as I believe it reflected a similar story line to that of 'frogger' with Dorothy trying to make it home akin to the frog attempting to make it back to its lilypad. 
 
-# Features
+With Dorothy under threat from the Wicked Witch of the West, the aim of the game is to make it across the Wicked Witch's forest and cross the river to bring Dorothy home. 'There's no place like home...'. Along the way you can pick up trusty companions, the Scarecrow, Tinman and the Lion to help build your score. 
 
-MVP took four days to reach, and after I was happy with the functionality of the game I decided to move on to some bonus features. Most notably the player is able to collect an extra 50 bonus points by collecting other characters mentioned above. These reset everytime Dorothy accomplishes her mission of reaching the other side. I also added a timer and a scoreboard to put some pressure on the player and to make the game a little more difficult. The very last thing to add was some audio to boost the overall experience of the game.
+# Process
+
+The first stages included implementing the grid on the page and enabling keyboard movement for Dorothy. This was a realtively simple switch statement. 
+
+```
+switch (event.keyCode) {
+      case 39: //arrow right
+      case 68: //d key
+        if (horizontalPosition < width - 1) dorothyPosition++
+        getBonusPoints()
+        hitWitch()
+        
+        checkWaterDanger()
+        checkHomeAreaDanger()
+        break
+      case 37: //arrow left
+      case 65: //a key
+        if (horizontalPosition > 0) dorothyPosition--
+        getBonusPoints()
+        hitWitch()
+        
+        checkWaterDanger()
+        checkHomeAreaDanger()
+        break
+      case 38: //arrow up
+      case 87: //w key
+        if (verticalPosition > 0) dorothyPosition -= width
+        getDorothyHome()
+        getBonusPoints()
+        hitWitch()
+      
+        checkWaterDanger()
+        checkHomeAreaDanger()
+        break
+      case 40: //arrow down
+      case 83: //s key
+        if (verticalPosition < width - 1) dorothyPosition += width
+        getBonusPoints()
+        hitWitch()
+        checkWaterDanger()
+        checkHomeAreaDanger()
+        break
+      default:
+        console.log('INVALID KEY')
+    }
+```
+
+After this was tested successfully, I moved onto creating the moving Witches and Logs. This challenging aspect took time but once I was happy with the finished result I could then implement 'check' functions to see if Dorothy had hit any of the obstacles that would make her lose a life. You can see in the code above that I was able to use my 'check' functions on each key movement. You can see an example of a check function below.
+
+```
+  function checkWaterDanger() {
+    if (waterArea.includes(cells[dorothyPosition] ) ) {
+      if (logs.map(item => item.position).includes(dorothyPosition)) {
+        console.log('I have arrived on a Log and I am happy and safe')
+      } else {
+        console.log('I should be dead')
+        waterSound.play()
+        return loseLife()
+      }
+    }
+  }
+```
+
+MVP took four days to reach, and after I was happy with the functionality of the game I decided to move on to scoring and adding some bonus features. Most notably the player is able to collect an extra 50 bonus points by collecting other characters mentioned above. These reset everytime Dorothy accomplishes her mission of reaching the other side. I also added a timer and a scoreboard to put some pressure on the player and to make the game a little more difficult. The very last thing to add was some audio to boost the overall experience of the game.
 
 # Screenshots
 
@@ -187,6 +250,11 @@ function handleKeyUp(event) {
   addDorothy(dorothyPosition)
 }
 ```
+# Key Learnings
+
+This was my first project after just three weeks of HTML, CSS and JavaScript. I pleased with my finished application however, I learnt some valuable lessons. 
+
+I definitely rushed to get started with code. In hindsight I would spend a lot longer planning each stage of my build. I lacked a direction in what I was going to do next and often bumped into errors I could have avoided with a clear plan.
 
 # Future Features
 
