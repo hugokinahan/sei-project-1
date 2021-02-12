@@ -5,13 +5,27 @@ Design a grid-based game using HTML, CSS, and JavaScript learnt in the first thr
 
 # Deployment
 
-Please follow th elink to play my game: https://hugokinahan.github.io/sei-project-1/
+Please follow the link to play my game: https://hugokinahan.github.io/sei-project-1/
+Repository link: https://github.com/hugokinahan/sei-project-1
 
 # Motivation
 
 This project was my first ever JavaScript project, so replicating a relatively staright-forward classic arcade game like 'frogger' would be a good place to start. I chose The Wizard Of Oz as a theme as I believe it reflected a similar story line to that of 'frogger' with Dorothy trying to make it home akin to the frog attempting to make it back to its lilypad. 
 
 With Dorothy under threat from the Wicked Witch of the West, the aim of the game is to make it across the Wicked Witch's forest and cross the river to bring Dorothy home. 'There's no place like home...'. Along the way you can pick up trusty companions, the Scarecrow, Tinman and the Lion to help build your score. 
+
+# Frameworks used
+
+- Languages
+- JavaScript, CSS3, HTML5
+- Typefaces
+- Google Fonts
+- Text Editor
+- VS Code
+- Browser
+- Chrome
+- Version control
+- Git and GitHub
 
 # Process
 
@@ -96,24 +110,11 @@ Completed Game
 
 ![Completed Game](finished.png)
 
-# Frameworks used
-
-- Languages
-- JavaScript, CSS3, HTML5
-- Typefaces
-- Google Fonts
-- Text Editor
-- VS Code
-- Browser
-- Chrome
-- Version control
-- Git and GitHub
-
 # Challenges
 
-There were many challenging parts to my project. I had trouble with the movement of Witches and Logs as obstacles, especially in getting them to move continuosly accross the screen without stopping when they reached the side of the grid. I did manage to accomplish this, but in quite a long-winded fashion and in hindsight using an Class Object would have made things easier. 
+There were many challenging parts to my project. I had trouble with the movement of Witches and Logs as obstacles, especially in getting them to move continuously accross the screen without stopping when they reached the side of the grid. I did manage to accomplish this, but in quite a long-winded fashion and in hindsight using an Class Object would have made things easier. 
 
-However, the most challenging aspect of my project was formulating the logic for when Dorothy is safe on a log in the river, meaning she should not die when on a log and in the waterArea (the blue area on the grid). As I already had code implemented instructing that when Dorothy is in the waterArea she should lose a life. 
+However, the most challenging aspect of my project was formulating the logic for when Dorothy is safe on a log in the river, meaning she should not lose a life when on a log and in the waterArea (the blue area on the grid). As I already had code implemented instructing that when Dorothy is in the waterArea she should lose a life. 
 
 To get around this I put the log positions into an Array Object and used the checkWaterDanger function to instruct that when the waterArea array .includes Dorothy on a log she is safe and if she is not on a log but is in the waterArea, the player should lose a life.
 
@@ -197,59 +198,6 @@ function hitWitch() {
 }
 ```
 
-```
-// * Move Dorothy
-function handleKeyUp(event) {
-  removeDorothy(dorothyPosition)
-  scoreDisplay.innerHTML = score += 10
-
-  const horizontalPosition = dorothyPosition % width
-  const verticalPosition = Math.floor(dorothyPosition / width)
-
-  switch (event.keyCode) {
-    case 39: //arrow right
-    case 68: //d key
-      if (horizontalPosition < width - 1) dorothyPosition++
-      getBonusPoints()
-      hitWitch()
-      
-      checkWaterDanger()
-      checkHomeAreaDanger()
-      break
-    case 37: //arrow left
-    case 65: //a key
-      if (horizontalPosition > 0) dorothyPosition--
-      getBonusPoints()
-      hitWitch()
-      
-      checkWaterDanger()
-      checkHomeAreaDanger()
-      break
-    case 38: //arrow up
-    case 87: //w key
-      if (verticalPosition > 0) dorothyPosition -= width
-      getDorothyHome()
-      getBonusPoints()
-      hitWitch()
-    
-      checkWaterDanger()
-      checkHomeAreaDanger()
-      break
-    case 40: //arrow down
-    case 83: //s key
-      if (verticalPosition < width - 1) dorothyPosition += width
-      getBonusPoints()
-      hitWitch()
-      checkWaterDanger()
-      checkHomeAreaDanger()
-      break
-    default:
-      console.log('INVALID KEY')
-  }
-
-  addDorothy(dorothyPosition)
-}
-```
 # Key Learnings
 
 This was my first project after just three weeks of HTML, CSS and JavaScript. I pleased with my finished application however, I learnt some valuable lessons. 
