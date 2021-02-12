@@ -6,6 +6,7 @@ Design a grid-based game using HTML, CSS, and JavaScript learnt in the first thr
 # Deployment
 
 Please follow the link to play my game: https://hugokinahan.github.io/sei-project-1/
+
 Repository link: https://github.com/hugokinahan/sei-project-1
 
 # Motivation
